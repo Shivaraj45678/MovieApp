@@ -1,0 +1,257 @@
+<!--
+<div class="container-fluid">
+  <div class="parent" *ngIf="image">
+    <div class="row">
+      <img class="image1" src="https://image.tmdb.org/t/p/original/{{image.backdrop_path}}" />
+      <div class="top-left">
+    <div style="display: flex;">
+      <h5>{{image.genres[0].name}}</h5>
+      <h5>{{image.genres[1].name}}</h5>
+
+    </div>
+    <div class="row ml-5" style="background: none;">
+      <strong style="font-size: 67px;font-family: math;color: rgb(255,255,255);">{{movieDetailes.Title}}</strong>
+
+    </div>
+        <div class="col-5">
+      <p style="color:rgb(239 222 222); ;">{{movieDetailes.Actors}}</p>
+        <span style="padding-left: 0;border-left: none;">{{movieDetailes.Runtime}}</span>
+        <span>{{movieDetailes.Released}}</span>
+        <span >{{movieDetailes.Country}}</span>
+        <p>{{movieDetailes.Plot}}</p><br>
+
+        <button (click)="scroll(target1)"  type="button" class="btn btn-outline-danger" style="border: 1px solid;padding-left: 35px; padding-right: 35px;">Trailer<i class="bi bi-caret-right-fill" style="margin-left: 5px;"></i></button>
+        <button (click)="scroll(target2)"  type="button" class="btn btn-outline-success ml-5" style="border: 1px solid;">More Detailes<i class="bi bi-caret-right-fill" style="margin-left: 5px;"></i></button>
+
+        </div><br>
+        <div class="row d-flex" style="text-align: center;background:none">
+          <div class="col-2" >
+            <div class="d-flex flex-column " >
+              <strong class="imdb">{{movieDetailes.imdbRating}}</strong>
+          <div class="ml-2" style="line-height: 5px;color: rgb(86 89 92);">
+            <small>IMDB</small>
+          </div>
+             </div>
+          </div>
+          <div class="col-2">
+            <div class="d-flex flex-column" >
+              <strong class="imdb">{{movieDetailes.imdbVotes}}</strong>
+          <div class="ml-5" style="line-height: 5px;color: rgb(86 89 92);">
+            <small>IMDB Votes</small>
+          </div>
+             </div>
+          </div>
+          <div class="col-2" >
+            <div class="d-flex flex-column ">
+              <strong class="imdb">{{image.popularity}}</strong>
+          <div class="ml-5" style="line-height: 5px;color: rgb(86 89 92);">
+            <small>Rated</small>
+          </div>
+             </div>
+          </div>
+          </div>
+
+      </div>
+
+    </div>
+
+    </div>
+</div> -->
+
+
+    <!-- <h1 class="heading">Related Movies</h1>
+    <div class="" style="display: grid; grid-template-columns: repeat(6, 1fr); gap:10px">
+      <div *ngFor="let movie of movies" class=" card" style="border: solid 2px #837878;">
+          <a ><img (click)=" navigateToDetailes(movie.id)" class="card-img-top" [src]="movie.url" alt="Card image cap" style="height: 7cm;cursor: pointer;" ></a>
+
+      </div>
+  </div>
+
+      <div class="back">
+
+  <div class="row" >
+            <div #target2 class="col-12">
+             <h1 class="heading">More Detailes</h1>
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#menu1">Over view</a></li>
+                    <li><a data-toggle="tab" href="#menu2">Actors & Story</a></li>
+                    <li><a data-toggle="tab" href="#menu3">Imdb Detailes</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="menu1" class="tab-pane fade in active">
+                        <div class="row">
+                            <div class="col-1">
+                                <strong>Director</strong>
+                                <strong>Writer</strong>
+                                <strong>Released</strong>
+                                <strong>Awards</strong>
+                                <strong>Genre</strong>
+                                <strong>BoxOffice</strong>
+                            </div>
+                            <div class="col-6">
+                                <p> {{movieDetailes.Director}}</p>
+                                <p> {{movieDetailes.Writer}}</p>
+                                <p>{{movieDetailes.Released}}</p>
+                                <p>{{movieDetailes.Awards}}</p>
+                                <p> {{movieDetailes.Genre}}</p>
+                                <p>{{movieDetailes.BoxOffice}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="menu2" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-1">
+                                <strong>Actors</strong>
+                                <strong>Language</strong>
+                                <strong>Story</strong>
+                            </div>
+                            <div class="col-6">
+                                <p> {{movieDetailes.Actors}}</p>
+                                <p> {{movieDetailes.Language}}</p>
+                                <p> {{movieDetailes.Plot}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="menu3" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-1">
+                                <strong>imdbID</strong>
+                                <strong>imdbRating</strong>
+                                <strong>imdbVotes</strong>
+                                <strong>OTT</strong>
+                            </div>
+                            <div class="col-6">
+                                <p> {{movieDetailes.imdbID}}</p>
+                                <p> {{movieDetailes.imdbRating}}/10</p>
+                                <p> {{movieDetailes.imdbVotes}}</p>
+                                <p>{{movieDetailes.DVD}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <hr>
+             <h1 class="heading">Trailer & Videos</h1>
+
+            </div>
+
+            <div #target1 class="scrolling-wrapper-flexbox ml-5">
+             <div class="video-wrapper" *ngFor="let video of additionalVideos">
+                 <youtube-player [videoId]="video.key"></youtube-player>
+             </div>
+         </div>
+
+
+
+      </div>
+    </div>
+
+
+<div class="row" *ngFor="let review of reviews" >
+  <div class="col-2">
+<img src="https://image.tmdb.org/t/p/original/{{review.author_details.avatar_path}}" alt="" >
+<h5 style="color: white;">{{review.author}}</h5>
+
+  </div>
+  <div class="col-10">
+  </div>
+</div> -->
+
+
+
+
+<!----movie site template---->
+
+
+<div class="bg-image" *ngIf="image">
+  <header style=" background-image:url('https://image.tmdb.org/t/p/original/{{image.backdrop_path}}');background-repeat: none;">
+    <div class="popular-movie-slider">
+
+      <img src="{{movieDetailes.Poster}}" class="poster">
+
+      <div class="popular-movie-slider-content">
+        <p class="release">{{movieDetailes.Released}}</p>
+        <h2 class="movie-name">{{movieDetailes.Title}}</h2>
+        <ul class="category">
+          <p>{{image.genres[0].name}}</p>
+          <li>{{image.genres[1].name}}</li>
+
+        </ul>
+        <p class="desc">{{movieDetailes.Plot}}</p>
+
+        <div class="movie-info">
+          <i class="fa fa-clock-o"> &nbsp;&nbsp;&nbsp;<span>{{movieDetailes.Runtime}}</span></i>
+          <i class="fa fa-volume-up"> &nbsp;&nbsp;&nbsp;<span>{{image.spoken_languages[0].english_name}}</span></i>
+          <i class="fa fa-circle"> &nbsp;&nbsp;&nbsp;<span>Imdb: <b>{{movieDetailes.imdbRating}}/10</b></span></i>
+        </div>
+
+        <div class="movie-btns">
+          <button><i class="fa fa-play"></i> &nbsp; Watch trailer</button>
+          <button class="read-more"><i class="fa fa-circle"></i> <i class="fa fa-circle"></i> <i class="fa fa-circle"></i>&nbsp; Read more</button>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+</div>
+<!-- <div class="related">
+  <h1 class="heading">Related Movies</h1>
+  <div class="grid-item" >
+    <div *ngFor="let movie of movies" class=" card" style="border: solid 2px #837878;">
+        <a ><img (click)=" navigateToDetailes(movie.id)" class="card-img-top " [src]="movie.url" alt="Card image cap" style="height: 7cm;cursor: pointer;" ></a>
+
+    </div>
+</div>
+</div> -->
+
+<div class="cards-wrapper">
+  <div *ngFor="let movie of movies"  class="card">
+    <a ><img (click)=" navigateToDetailes(movie.id)" class=" " [src]="movie.url" alt="Card image cap" style="height: 6cm;cursor: pointer;width: 4cm;" ></a>
+  </div>
+
+</div>
+
+<!-- <div class="videos">
+<h1 class="heading">Trailer/Videos</h1>
+
+<div #target1 class="video-item">
+    <div  *ngFor="let video of additionalVideos">
+      <youtube-player [videoId]="video.key"></youtube-player>
+  </div>
+</div>
+
+</div> -->
+
+
+
+<footer>
+
+  <div class="logo-box">
+    <p class="logo">
+
+      Movie<span>World</span>
+    </p>
+    <p><i class="fa fa-copyright"></i> 2022-2023,SSR</p>
+  </div>
+
+  <ul>
+    <li>Info</li>
+    <li>Top Movies</li>
+    <li>Home</li>
+    <li>news</li>
+    <li>contact</li>
+  </ul>
+
+
+<div class="socail-box">
+  <i class="fa fa-facebook-f"></i>
+  <i class="fa fa-twitter"></i>
+  <i class="fa fa-instagram"></i>
+</div>
+
+</footer>
+

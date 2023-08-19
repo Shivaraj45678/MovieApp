@@ -8,6 +8,7 @@ import {CommonModule} from '@angular/common';
 // import { Top100Component } from './moviesdata/top100/top100.component';
 // import { MovieDetailesComponent } from './movie-detailes/movie-detailes.component';
 import { HomeComponent } from './home/home.component';
+import { MovieDetailesComponent } from './movie-detailes/movie-detailes.component';
 
 // import { YouTubePlayerModule } from '@angular/youtube-player';
 // import { YouTubePlayerModule } from '@angular/youtube-player';
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     // Top100Component,
     // MovieDetailesComponent,
-    HomeComponent
+    HomeComponent,
+    MovieDetailesComponent
   ],
   imports: [
     HttpClientModule,
