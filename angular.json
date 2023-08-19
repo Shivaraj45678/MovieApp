@@ -47,13 +47,9 @@
                   "name": "main",
                   "maximumWarning": "10kb",
                   "maximumError": "15kb"
-                },
-                {
-                  "type": "css",
-                  "maximumWarning": "8kb",
-                  "maximumError": "10kb"
                 }
-              ],
+              ]
+              ,
               "outputHashing": "all"
             },
             "development": {
