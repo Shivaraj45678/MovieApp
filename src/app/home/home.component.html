@@ -1,0 +1,157 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <base href="/">
+</head>
+
+<body>
+  <div class="container-fluid">
+
+      <ul class="social">
+        <a><i class="bi bi-instagram" data-toggle="tooltip" data-placement="top" title="Instagram"></i></a>
+        <a><i class="bi bi-facebook" data-toggle="tooltip" data-placement="top" title="Facebook"
+            style="color: blue;"></i></a>
+        <a><i class="bi bi-youtube" data-toggle="tooltip" data-placement="top" title="Youtube"
+            style="color: red;"></i></a>
+        <a><i class="bi bi-twitter" data-toggle="tooltip" data-placement="top" title="Twitter"
+            style="color: blue;"></i></a>
+      </ul>
+      <ul>
+        <h1 class="logo"><i style="color: gold; margin-top: 1.2cm;margin-right: 10px;" class="bi bi-film"></i>Movie World</h1>
+        <div class="list">
+          <li><a href="">Advertise</a> </li>
+          <li><a href="">Contact</a> </li>
+          <li><a href="">Comming Soon</a> </li>
+          <li><a href="">In Theaters</a> </li>
+          <li><a href="">News</a> </li>
+          <li><a href="">Home</a> </li>
+        </div>
+
+      </ul>
+      <hr style="color: rgb(14, 13, 13);">
+      <ul>
+        <div class="list" style="margin-top: 0;font-size: large;">
+          <li> <form  (submit)="hi()" class="form-inline my-2 my-lg-0">
+            <input [(ngModel)]="query" name="query" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form></li>
+
+          <li><a href="">MOST COMMENTED</a> </li>
+          <li><a href="">LATEST TRAILERS</a> </li>
+          <li><a href="">SHOW All</a> </li>
+          <li><a href="">IMDb Top 100 Movies</a> </li>
+        </div>
+      </ul>
+
+      <hr style="color: rgb(14, 13, 13);">
+
+
+        <div class="" style="display: grid; grid-template-columns: repeat(6, 1fr); gap:10px">
+          <div *ngFor="let movie of movies" class=" card">
+              <a ><img (click)=" navigateToDetailes(movie.id)" class="card-img-top" [src]="movie.url == 'N/A'? 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png':movie.url" alt="Card image cap" style="height: 7cm;cursor: pointer;" ></a>
+              <div class="card-block">
+      <strong >Title:&nbsp;&nbsp;{{movie.title}}</strong><br>
+      <strong style="color: rgb(94, 255, 0);">Type:&nbsp;&nbsp;{{movie.type}}</strong>
+      <p>Year:{{movie.year}}</p>
+      <div *ngFor="let item of Details ">
+        <span>{{item.actors}}</span>
+      </div>
+              </div>
+          </div>
+      </div>
+
+
+<h4>IMDb Top 100 Movies </h4>
+<div *ngFor="let video of videos">
+
+  <h3>{{ video.name }}</h3>
+  <div *ngIf="video.site === 'YouTube'">
+<iframe
+width="560"
+height="315"
+allow="accelerometer:autoplay"
+allowfullscreen
+src="'https://www.youtube.com/embed/'+n3Pt0qQVs3I" frameborder="0"></iframe>
+  </div>
+
+</div>
+</div>
+
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>movie-world</title>
+</head>
+<body style="background-color: rgb(15, 15, 15);">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><strong style="margin-left: 50px;">Movie World</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-md-auto gap-2">
+          <li class="nav-item rounded">
+            <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill me-2"></i>Home</a>
+          </li>
+          <li class="nav-item rounded">
+            <a class="nav-link" href="#">New Movies</a>
+          </li>
+          <li class="nav-item rounded">
+            <a class="nav-link" href="#">Web Series</a>
+          </li>
+          <li class="nav-item dropdown rounded">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Languages</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Telugu</a></li>
+              <li><a class="dropdown-item" href="#">Kannada</a></li>
+              <li><a class="dropdown-item" href="#">Hindi</a></li>
+              <li><a class="dropdown-item" href="#">Tamil</a></li>
+              <li><a class="dropdown-item" href="#">Malayalam</a></li>
+              <!-- <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Logout</a></li> -->
+            </ul>
+          </li>
+          <li >
+            <form  (submit)="hi()" class="form-inline my-2 my-lg-0 d-flex">
+              <input [(ngModel)]="query" name="query" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0 ms-2" type="submit">Search</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div >
+    <div class="grid-item mt-4" >
+      <div *ngFor="let movie of movies" class=" card">
+          <a ><img (click)=" navigateToDetailes(movie.id)" class="card-img-top" [src]="movie.url == 'N/A'? 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png':movie.url" alt="Card image cap" style="cursor: pointer;" ></a>
+          <div class="card-block">
+  <small >Title:&nbsp;&nbsp;{{movie.title}}</small><br>
+  <small style="color: rgb(94, 255, 0);">Type:&nbsp;&nbsp;{{movie.type}}</small>
+  <p>Year:{{movie.year}}</p>
+  <div *ngFor="let item of Details ">
+    <span>{{item.actors}}</span>
+  </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</body>
+</html>
+
