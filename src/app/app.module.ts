@@ -9,16 +9,11 @@ import {CommonModule} from '@angular/common';
 // import { MovieDetailesComponent } from './movie-detailes/movie-detailes.component';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailesComponent } from './movie-detailes/movie-detailes.component';
-
-// import { YouTubePlayerModule } from '@angular/youtube-player';
-// import { YouTubePlayerModule } from '@angular/youtube-player';
-// import { YoutubePlayerModule } from 'ngx-youtube-player';
+// import { YouTubePlayer } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // Top100Component,
-    // MovieDetailesComponent,
     HomeComponent,
     MovieDetailesComponent
   ],
@@ -28,7 +23,6 @@ import { MovieDetailesComponent } from './movie-detailes/movie-detailes.componen
     AppRoutingModule,
     FormsModule,
     CommonModule,
-    // YoutubePlayerModule
 
   ],
   providers: [],

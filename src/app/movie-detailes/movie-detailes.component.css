@@ -1,6 +1,5 @@
 *{
-  margin:0;
-  padding:0;
+
   box-sizing:border-box;
   transition:all .2s;
 }
@@ -521,4 +520,9 @@ footer{
     width: 3cm !important;
 margin-right: -40px;
 --bs-card-bg: #272525;
+  }
+
+  .modal-content{
+    background-color: #000 !important;
+    width: fit-content !important;
   }

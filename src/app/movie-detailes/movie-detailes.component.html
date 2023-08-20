@@ -21,11 +21,26 @@
         </div>
 
         <div class="movie-btns">
-          <button><i class="fa fa-play"></i> &nbsp; Watch trailer</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa fa-play"></i> &nbsp; Watch trailer
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div *ngIf="mainVideo">
+                    <iframe width="360" height="255" [src]="sanitizedVideoUrl"></iframe>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <button class="read-more"><i class="fa fa-circle"></i> <i class="fa fa-circle"></i> <i class="fa fa-circle"></i>&nbsp; Read more</button>
         </div>
-
-      </div>
+     </div>
 
     </div>
   </header>
@@ -36,20 +51,8 @@
   </div>
 
 </div>
-
-<!-- <div class="videos">
-<h1 class="heading">Trailer/Videos</h1>
-
-<div #target1 class="video-item">
-    <div  *ngFor="let video of additionalVideos">
-      <youtube-player [videoId]="video.key"></youtube-player>
-  </div>
+<div>
 </div>
-
-</div> -->
-
-
-
 <footer>
 
   <div class="logo-box">

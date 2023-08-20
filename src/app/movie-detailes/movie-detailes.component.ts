@@ -1,8 +1,8 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MovieserviceService } from '../services/movieservice.service';
-import { Mdata } from '../model';
 import { Movie } from '../model';
 import {ActivatedRoute} from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-detailes',
@@ -11,41 +11,52 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class MovieDetailesComponent implements OnInit {
 // MData:Mdata[];
+videoId = 'QIZ9aZD6vs0';
+
+  sanitizedVideoUrl: SafeResourceUrl='';
   videos:any[]=[];
   movieDetailes:any;
   movies:Movie[];
   mainVideo: any;
   navigateToDetailes:any;
-  additionalVideos: any;
+  additionalVideos: any[] = [];
   reviews: any;
   image: any;
   mdata: any[] = [];
   fun: any;
   fun2: any;
+
   scroll(el: HTMLElement) {
     el.scrollIntoView();
   }
   // images: any;
   constructor(private movieservice: MovieserviceService,
-    private route:ActivatedRoute) {
+    private route:ActivatedRoute,private sanitizer: DomSanitizer) {
       this.movies=this.movieservice.getMovies();
       console.log(this.movies)
       this.images();
 
     }
-  fetchTrailer(){
-    const id =this.route.snapshot.paramMap.get('id');
-    if (id !== null) {
-    this.movieservice.getMovieVideos(id).subscribe(
-      res=>{
-        this.videos=res.results;
-        // this.mainVideo=this.videos[0];
-        this.additionalVideos=this.videos.slice(0,5);
-        // this.additionalVideos=this.videos;
-        console.log(this.additionalVideos)
-      }
-      )}
-    }
+
+    fetchTrailer() {
+      const id = this.route.snapshot.paramMap.get('id');
+      if (id !== null) {
+        this.movieservice.getMovieVideos(id).subscribe(
+          res => {
+            this.videos = res.results;
+            console.log(this.videos)
+            this.mainVideo = this.videos.find(video => video.type === 'Trailer');
+console.log(this.mainVideo)
+            if (this.mainVideo && this.mainVideo.key) {
+              const videoUrl = `https://www.youtube.com/embed/${this.mainVideo.key}`;
+              this.sanitizedVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
+            }
+          },
+          error => {
+            // Handle error
+          }
+        );
+      }}
     fetchReview(){
     const id =this.route.snapshot.paramMap.get('id');
     if (id !== null) {
