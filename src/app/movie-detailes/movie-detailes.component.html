@@ -47,12 +47,25 @@
         </div>
       </header>
     </div>
+<div class="cast">
+  <h1 class="heading">Movie Cast</h1>
+  <div class="cast-container">
+    <div class="actor-card" *ngFor="let cast of cast">
+        <img [src]="cast.profile_path ? 'https://image.tmdb.org/t/p/original/' + cast.profile_path : 'path_to_default_image'" >
+
+    </div>
+
+  </div>
+</div>
+
+
+
     <div class="related" #target1>
-      <h2 class="heading">More Detailes</h2>
+      <h2 class="heading">Related Movies</h2>
 
       <div class="cards-wrapper">
         <div *ngFor="let movie of movies"  class="card">
-          <a ><img (click)=" navigateToDetailes(movie.id)" class=" " [src]="movie.url" alt="Card image cap" style="height: 6cm;cursor: pointer;width: 4cm;" ></a>
+          <a ><img (click)=" navigateToDetailes(movie.id)" class=" "  [src]="movie.url == 'N/A'? 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png':movie.url" alt="Card image cap" style="height: 6cm;cursor: pointer;width: 4cm;" ></a>
         </div>
 
       </div>
@@ -113,7 +126,7 @@
         </table>
         </div>
     </div>
-
+<button (click)="getCast()"> click</button>
 
 
 

@@ -25,6 +25,7 @@ videoId = 'QIZ9aZD6vs0';
   mdata: any[] = [];
   fun: any;
   fun2: any;
+  cast: any;
 
   scroll(el: HTMLElement) {
     el.scrollIntoView();
@@ -90,6 +91,22 @@ images(){
   }
 )}
 }
+
+getCast() {
+  const id = this.route.snapshot.paramMap.get('id');
+  if (id !== null) {
+    this.movieservice.moviecast(id).subscribe(
+      data => {
+        // Filter out cast members with image URLs
+        this.cast = data.cast.filter((member: { profile_path: null; }) => member.profile_path !== null);
+
+        console.log(this.cast);
+      }
+    );
+  }
+}
+
+
 //   ReadMore(id: string) {
 //     this.movieservice.getMovieByID(id).subscribe((data: any) => {
 //       this.Details = [];
@@ -123,6 +140,7 @@ ngOnInit(): void {
 
   this.fetchTrailer();
   this.fetchReview();
+  this.getCast();
 }}
 
 // hi(){

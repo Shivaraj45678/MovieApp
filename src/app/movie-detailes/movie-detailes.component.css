@@ -236,7 +236,7 @@ footer{
   grid-template-columns:auto auto auto;
   align-items:center;
 }
-.cards-wrapper,.videos,.more,.related{
+.videos,.more,.related,.cast{
   background:#272525;
   color:#fff;
   padding:40px 50px;
@@ -538,13 +538,53 @@ footer{
   flex-wrap: nowrap;
   overflow-x: scroll;
 }
-  .card {
-    place-content: center;
-    min-width: 13rem;
-    width: 3cm !important;
-margin-right: -40px;
---bs-card-bg: #272525;
-  }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.cast-container {
+  display: flex;
+  overflow-x: auto;
+  height: 4cm;
+  width: 100%;
+  white-space: nowrap;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+
+}
+.container {
+  padding: 2px 16px;
+}
+
+.actor-card {
+  flex-shrink: 0;
+  width: 3cm;
+  height: 4cm;
+  border-radius: 70%;
+  margin-right: 10px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.actor-card img {
+  width: 3cm;
+  height: 4cm;
+  border-radius: 60%;
+  /* margin-bottom: 5px; */
+}
+
+.actor-card p {
+  margin: 0;
+  font-size: 12px;
+}
+.cast-container::-webkit-scrollbar {
+  display: none; /* Webkit browsers (Chrome, Safari, etc.) */
+}
 
 
 iframe{
