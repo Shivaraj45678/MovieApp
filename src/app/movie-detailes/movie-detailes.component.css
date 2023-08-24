@@ -490,6 +490,10 @@ footer{
   transition: all 1s ease;
   z-index: 999;
 }
+.card{
+
+  margin-right: 155px;
+}
 
 @media (min-width: 0px) and (max-width: 719px) {
 

@@ -133,7 +133,7 @@ html{
 }
 .card{
   background-color: black;
-  height: 30px !important;
+  height: 300px;
 }
 .card-img-top{
   height: 200px;
