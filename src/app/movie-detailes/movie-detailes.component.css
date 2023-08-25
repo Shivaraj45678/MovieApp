@@ -8,7 +8,6 @@
   transition:all .2s;
 }
 
-
 body{
   font-family: 'Roboto', sans-serif;
   overflow:hidden;
@@ -239,7 +238,7 @@ footer{
 .videos,.more,.related,.cast{
   background:#272525;
   color:#fff;
-  padding:40px 50px;
+  padding:10px 15px;
   /* display: grid; */
   grid-template-columns:auto auto auto;
   align-items:center;
@@ -400,17 +399,6 @@ header .popular-movie-slider .poster{
   width:250px;
   height:300px;
 }
-
-
-
-
-
-
-
-
-
-
-
 footer{
   padding:40px 50px;
   grid-template-columns:auto;
@@ -435,6 +423,15 @@ footer{
     gap: 10px;
 
   }
+  .actor-card {
+    width: 2.7cm ! important;
+    height: 3.7cm ! important;
+  }
+
+  .actor-card img {
+    width: 2.7cm;
+    height: 3.7cm;
+  }
 }
   @media (max-width: 1000px){
     .grid-item{
@@ -448,7 +445,15 @@ footer{
       height: 245px !important;
       width: 385px !important;
     }
+    .actor-card {
+      width: 2.3cm ! important;
+      height: 3.3cm ! important;
+    }
 
+    .actor-card img {
+      width: 2.3cm ! important;
+      height: 3.3cm ! important;
+    }
 }
 @media (max-width: 800px){
   .grid-item{
@@ -457,7 +462,15 @@ footer{
     gap: 10px;
 
   }
+  .actor-card {
+    width: 2.2cm ! important;
+    height: 3.2cm ! important;
+  }
 
+  .actor-card img {
+    width: 2.2cm ! important;
+    height: 3.2cm ! important;
+  }
 }
 @media (max-width: 720px){
   .grid-item{
@@ -466,7 +479,15 @@ footer{
     gap: 10px;
 
   }
+  .actor-card {
+    width: 2cm ! important;
+    height: 3cm ! important;
+  }
 
+  .actor-card img {
+    width: 2cm ! important;
+    height: 3cm ! important;
+  }
 }
 @media (max-width: 650px){
   .grid-item{
@@ -484,17 +505,24 @@ footer{
     background-color: #f0eaea !important;
     width: fit-content !important;
   }
+  .actor-card {
+    width: 1cm ! important;
+    height: 2cm ! important;
+  }
+
+  .actor-card img {
+    width: 1cm ! important;
+    height: 2cm ! important;
+  }
 }
-.card:hover{
+.relatedcard:hover{
   transform: scale(.95);
   transition: all 1s ease;
   z-index: 999;
 }
-.card{
-
-  margin-right: 155px;
+.relatedcard{
+  margin-right: 5px;
 }
-
 @media (min-width: 0px) and (max-width: 719px) {
 
 
@@ -536,7 +564,22 @@ footer{
   gap:30px;
   font-size:.85em;
 }
+
+
 }
+@media (min-width: 0px) and (max-width: 500px){
+  header .popular-movie-slider .popular-movie-slider-content .movie-info .fa span{
+ font-size:9px;
+  }
+  .relatedcard img{
+    height: 3cm !important;
+    width: 1.5cm !important;
+  }
+  .heading{
+    font-size: small !important;
+  }
+}
+
 .cards-wrapper {
   display: flex;
   flex-wrap: nowrap;
@@ -551,16 +594,13 @@ body {
 .cast-container {
   display: flex;
   overflow-x: auto;
-  height: 4cm;
   width: 100%;
   white-space: nowrap;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;
 
 }
-.container {
-  padding: 2px 16px;
-}
+
 
 .actor-card {
   flex-shrink: 0;
