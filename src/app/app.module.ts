@@ -9,13 +9,22 @@ import {CommonModule} from '@angular/common';
 // import { MovieDetailesComponent } from './movie-detailes/movie-detailes.component';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailesComponent } from './movie-detailes/movie-detailes.component';
+import { NewMoviesComponent } from './movielist/new-movies/new-movies.component';
+import { TopRatedComponent } from './movielist/top-rated/top-rated.component';
+import { LanguageComponent } from './movielist/language/language.component';
+
 // import { YouTubePlayer } from '@angular/youtube-player';
+// import { LoadingSpinnerModule } from 'ngx-loading-spinner';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MovieDetailesComponent
+    MovieDetailesComponent,
+    NewMoviesComponent,
+    TopRatedComponent,
+    LanguageComponent,
+
   ],
   imports: [
     HttpClientModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieserviceService } from '../services/movieservice.service';
 import { Movie } from '../model';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
@@ -18,7 +18,7 @@ videoId = 'QIZ9aZD6vs0';
   movieDetailes:any;
   movies:Movie[];
   mainVideo: any;
-  navigateToDetailes:any;
+  // navigateToDetailes:any;
   additionalVideos: any[] = [];
   reviews: any;
   image: any;
@@ -30,9 +30,11 @@ videoId = 'QIZ9aZD6vs0';
   scroll(el: HTMLElement) {
     el.scrollIntoView();
   }
+
+
   // images: any;
   constructor(private movieservice: MovieserviceService,
-    private route:ActivatedRoute,private sanitizer: DomSanitizer) {
+    private route:ActivatedRoute,private sanitizer: DomSanitizer,private router:Router) {
       this.movies=this.movieservice.getMovies();
       console.log(this.movies)
       this.images();
@@ -143,6 +145,12 @@ ngOnInit(): void {
   this.getCast();
 }}
 
+navigateToDetailes(id:string){
+  this.movies = [];
+  console.log("hello",this.movies)
+
+this.router.navigate(['/movie-detailes',id])
+ }
 // hi(){
 //   this.sharedData=this.movieservice.getDataFrom();
 // console.log(this.sharedData)

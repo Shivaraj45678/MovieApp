@@ -572,8 +572,8 @@ footer{
  font-size:9px;
   }
   .relatedcard img{
-    height: 3cm !important;
-    width: 1.5cm !important;
+    height: 4cm !important;
+    width: 2.5cm !important;
   }
   .heading{
     font-size: small !important;
@@ -619,6 +619,10 @@ body {
   width: 3cm;
   height: 4cm;
   border-radius: 60%;
+
+  /* width: 2rem;
+  aspect-ratio: 1/1;
+  border-radius:50%; */
   /* margin-bottom: 5px; */
 }
 
