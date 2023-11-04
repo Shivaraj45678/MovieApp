@@ -92,8 +92,6 @@ images(){
   this.movieservice.MovieImages(id).subscribe(
     data=>{
       this.image=data;
-      // this.fun2=data.genres[].name;
-      // console.log(this.fun2);
       console.log(this.image)
   }
 )}

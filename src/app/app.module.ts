@@ -13,6 +13,10 @@ import { NewMoviesComponent } from './movielist/new-movies/new-movies.component'
 import { TopRatedComponent } from './movielist/top-rated/top-rated.component';
 import { LanguageComponent } from './movielist/language/language.component';
 import { ActordetailesComponent } from './actordetailes/actordetailes.component';
+import { NowPlayingComponent } from './movies-list/now-playing/now-playing.component';
+import { PopularMoviesComponent } from './movies-list/popular-movies/popular-movies.component';
+import { TopRatedMoviesComponent } from './movies-list/top-rated-movies/top-rated-movies.component';
+import { UpcomingMoviesComponent } from './movies-list/upcoming-movies/upcoming-movies.component';
 
 // import { YouTubePlayer } from '@angular/youtube-player';
 // import { LoadingSpinnerModule } from 'ngx-loading-spinner';
@@ -26,6 +30,10 @@ import { ActordetailesComponent } from './actordetailes/actordetailes.component'
     TopRatedComponent,
     LanguageComponent,
     ActordetailesComponent,
+    NowPlayingComponent,
+    PopularMoviesComponent,
+    TopRatedMoviesComponent,
+    UpcomingMoviesComponent,
 
   ],
   imports: [

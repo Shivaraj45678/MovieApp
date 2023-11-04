@@ -182,7 +182,16 @@ body {
       gap: 10px;
 
     }
-
+    .form-inline{
+      width: 100%;
+    }
+    .form-inline input{
+      height: 1cm;
+      margin-top: 8px;
+    }
+    .form-control {
+      width: 100%;
+    }
 }
 @media (max-width: 800px){
   .grid-item{
@@ -191,6 +200,7 @@ body {
     gap: 10px;
 
   }
+
 
 }
 @media (max-width: 720px){
