@@ -1,0 +1,116 @@
+
+.container{
+  background-color: black;
+}
+.card-block{
+  color: white;
+  text-align: center;
+}
+.card{
+  background-color: rgb(34, 31, 31);
+  height: 300px;
+}
+.card-img-top{
+  height: 200px;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+
+}
+
+.grid-item{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+
+}
+@media (max-width: 1200px){
+  .grid-item{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+
+  }
+}
+  @media (max-width: 1000px){
+    .grid-item{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+
+    }
+    .form-inline{
+      width: 100%;
+    }
+    .form-inline input{
+      height: 1cm;
+      margin-top: 8px;
+    }
+    .form-control {
+      width: 100%;
+    }
+}
+@media (max-width: 800px){
+  .grid-item{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+  }
+
+
+}
+@media (max-width: 720px){
+  .grid-item{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+  }
+
+}
+@media (max-width: 650px){
+  .grid-item{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+  }
+
+}
+.card:hover{
+  transform: scale(.95);
+  transition: all 1s ease;
+  z-index: 999;
+}
+/* Paginator Styles */
+.white-paginator {
+  background-color: white;
+  color: black;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  animation: fadeIn 0.5s;
+}
+
+.white-paginator:hover {
+  background-color: #f0f0f0;
+}
+
+/* Animation Definitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

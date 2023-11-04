@@ -15,6 +15,10 @@ import { NowPlayingComponent } from './movies-list/now-playing/now-playing.compo
 import { PopularMoviesComponent } from './movies-list/popular-movies/popular-movies.component';
 import { TopRatedMoviesComponent } from './movies-list/top-rated-movies/top-rated-movies.component';
 import { UpcomingMoviesComponent } from './movies-list/upcoming-movies/upcoming-movies.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatGridList } from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 // import { YouTubePlayer } from '@angular/youtube-player';
 // import { LoadingSpinnerModule } from 'ngx-loading-spinner';
@@ -38,9 +42,13 @@ import { UpcomingMoviesComponent } from './movies-list/upcoming-movies/upcoming-
     AppRoutingModule,
     FormsModule,
     CommonModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatGridListModule,
+  ],
+  providers: [
 
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
