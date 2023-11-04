@@ -12,6 +12,7 @@ import { MovieDetailesComponent } from './movie-detailes/movie-detailes.componen
 import { NewMoviesComponent } from './movielist/new-movies/new-movies.component';
 import { TopRatedComponent } from './movielist/top-rated/top-rated.component';
 import { LanguageComponent } from './movielist/language/language.component';
+import { ActordetailesComponent } from './actordetailes/actordetailes.component';
 
 // import { YouTubePlayer } from '@angular/youtube-player';
 // import { LoadingSpinnerModule } from 'ngx-loading-spinner';
@@ -24,6 +25,7 @@ import { LanguageComponent } from './movielist/language/language.component';
     NewMoviesComponent,
     TopRatedComponent,
     LanguageComponent,
+    ActordetailesComponent,
 
   ],
   imports: [

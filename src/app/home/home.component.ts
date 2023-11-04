@@ -22,8 +22,8 @@ export class HomeComponent implements OnInit {
   constructor(private movieservice: MovieserviceService,
    private router:Router,private route:ActivatedRoute) { }
    navigateToDetailes(id:string){
-    this.movies = [];
-    console.log("hello",this.movies)
+    // this.movies = [];
+    // console.log("hello",this.movies)
 
 this.router.navigate(['/movie-detailes',id])
    }

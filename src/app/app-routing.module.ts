@@ -5,6 +5,7 @@ import { MovieDetailesComponent } from './movie-detailes/movie-detailes.componen
 import { NewMoviesComponent } from './movielist/new-movies/new-movies.component';
 import { TopRatedComponent } from './movielist/top-rated/top-rated.component';
 import { LanguageComponent } from './movielist/language/language.component';
+import { ActordetailesComponent } from './actordetailes/actordetailes.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -14,6 +15,8 @@ const routes: Routes = [
   { path: 'new', component: NewMoviesComponent },
   { path: 'top', component: TopRatedComponent },
   { path: 'languagewise', component: LanguageComponent },
+  { path: 'actordetailes/:id', component: ActordetailesComponent },
+
 ];
 
 @NgModule({

@@ -40,6 +40,11 @@ videoId = 'QIZ9aZD6vs0';
       this.images();
 
     }
+    navigateToActorDetailes(id:string){
+  this.router.navigate(['/actordetailes',id])
+     }
+
+
 
     fetchTrailer() {
       const id = this.route.snapshot.paramMap.get('id');
