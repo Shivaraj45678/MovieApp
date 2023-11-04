@@ -9,9 +9,7 @@ import {CommonModule} from '@angular/common';
 // import { MovieDetailesComponent } from './movie-detailes/movie-detailes.component';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailesComponent } from './movie-detailes/movie-detailes.component';
-import { NewMoviesComponent } from './movielist/new-movies/new-movies.component';
-import { TopRatedComponent } from './movielist/top-rated/top-rated.component';
-import { LanguageComponent } from './movielist/language/language.component';
+
 import { ActordetailesComponent } from './actordetailes/actordetailes.component';
 import { NowPlayingComponent } from './movies-list/now-playing/now-playing.component';
 import { PopularMoviesComponent } from './movies-list/popular-movies/popular-movies.component';
@@ -26,9 +24,7 @@ import { UpcomingMoviesComponent } from './movies-list/upcoming-movies/upcoming-
     AppComponent,
     HomeComponent,
     MovieDetailesComponent,
-    NewMoviesComponent,
-    TopRatedComponent,
-    LanguageComponent,
+
     ActordetailesComponent,
     NowPlayingComponent,
     PopularMoviesComponent,
