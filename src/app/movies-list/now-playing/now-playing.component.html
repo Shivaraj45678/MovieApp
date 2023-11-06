@@ -1,33 +1,56 @@
 <div style="background-color: rgb(12, 12, 12);">
   <div class="container">
     <h1>Now Playing movies</h1>
-    <ng-container >
-      <div class="grid-item mt-4" >
-        <div *ngFor="let movie of dataSource.data" class=" card">
-            <a ><img  class="card-img-top"  [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'path_to_default_image'" alt="Card image cap" style="cursor: pointer;" ></a>
-            <div class="card-block">
-      <small >Title:&nbsp;&nbsp;{{movie.title}}</small><br>
-      <small style="color: rgb(94, 255, 0);">Type:&nbsp;&nbsp;{{movie.type}}</small>
-      <p>Year:{{movie.year}}</p>
+    <div *ngIf="!loading">
+      <ng-container >
 
-            </div>
+        <div class="grid-item mt-4" >
+          <div *ngFor="let movie of dataSource.data" class=" card">
+              <a ><img  class="card-img-top"  [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'path_to_default_image'" alt="Card image cap" style="cursor: pointer;" ></a>
+              <div class="card-block">
+        <small >Title:&nbsp;&nbsp;{{movie.title}}</small><br>
+        <small style="color: rgb(94, 255, 0);">Type:&nbsp;&nbsp;{{movie.type}}</small>
+        <p>Year:{{movie.year}}</p>
+
+              </div>
+          </div>
         </div>
-      </div>
+
 
       <!-- <div class="movie-title">{{ movie.title }}</div> -->
     </ng-container>
-
     <mat-paginator
-      [length]="totalPages"
-      [pageIndex]="page - 1"
-      [pageSize]="1"
-      (page)="onPageChange($event)"
-      showFirstLastButtons
-      class="white-paginator"
-    ></mat-paginator>
+    [length]="totalPages"
+    [pageIndex]="page - 1"
+    [pageSize]="1"
+    (page)="onPageChange($event)"
+    showFirstLastButtons
+    class="white-paginator"
+  ></mat-paginator>
+    </div>
+
+  </div>
+
+    <div class="loading-container" *ngIf="loading">
+      <div class="spinner-box">
+        <div class="blue-orbit leo">
+        </div>
+
+        <div class="green-orbit leo">
+        </div>
+
+        <div class="red-orbit leo">
+        </div>
+
+        <div class="white-orbit w1 leo">
+        </div><div class="white-orbit w2 leo">
+        </div><div class="white-orbit w3 leo">
+        </div>
+      </div>
+    </div>
   </div>
 
 
 
 
-</div>
+

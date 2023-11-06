@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatGridList } from '@angular/material/grid-list';
 import { MatGridListModule } from '@angular/material/grid-list';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 // import { YouTubePlayer } from '@angular/youtube-player';
 // import { LoadingSpinnerModule } from 'ngx-loading-spinner';
 
@@ -45,6 +45,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatGridListModule,
+    MatProgressSpinnerModule
   ],
   providers: [
 

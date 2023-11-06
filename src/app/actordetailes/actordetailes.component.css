@@ -30,3 +30,6 @@
     flex: 1; /* Allow the text to take up available space */
   }
 }
+.dob p{
+  margin-left: 10px;
+}
