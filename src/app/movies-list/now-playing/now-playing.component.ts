@@ -30,7 +30,7 @@ export class NowPlayingComponent {
       // Add a timeout to hide the loading spinner after 2 seconds
       setTimeout(() => {
         this.loading = false; // Set loading flag to false after the timeout
-      }, 2000);
+      }, 1000);
 
       this.totalPages = data.total_pages;
     });
