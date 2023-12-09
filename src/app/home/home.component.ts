@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   title = 'movieapp';
+  selected:any;
   movieId: any;
   videos: Video[] = [];
   // text="string";
@@ -58,7 +59,7 @@ this.router.navigate(['/movie-detailes',id])
         let obj = new Movie(id, title, url, year, type);
 
         this.movies.push(obj);
-        console.log("movie: ", movie)
+        console.log("movie: ", movie,this.selected)
       }
       this.movieservice.setMovies(this.movies);
       console.log("list,", this.movies)
@@ -83,7 +84,7 @@ this.router.navigate(['/movie-detailes',id])
     //   this.data=data.results;
     //   console.log(data)
 
-
+console.log(this.selected)
   // this.route.paramMap.subscribe(params => {
   //   this.movieId = +params.get('id');
   //   this.fetchMovieDetails();

@@ -20,6 +20,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatGridList } from '@angular/material/grid-list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoadingComponent } from './loader/loading/loading.component';
 // import { YouTubePlayer } from '@angular/youtube-player';
 // import { LoadingSpinnerModule } from 'ngx-loading-spinner';
 
@@ -34,6 +35,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     PopularMoviesComponent,
     TopRatedMoviesComponent,
     UpcomingMoviesComponent,
+    LoadingComponent,
 
   ],
   imports: [

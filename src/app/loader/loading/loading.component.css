@@ -1,0 +1,247 @@
+/*--- Loader 1 --- */
+body{
+  margin: 0;
+  padding: 0;
+}
+.box-1{
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #009688;
+}
+ul{
+  display: flex;
+}
+ul li{
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: #B2D5EA;
+  margin: 0 5px;
+  border-radius: 50%;
+  animation: animate 1.4s linear infinite;
+}
+@keyframes animate{
+  0%
+  {
+    transform: translateY(0);
+  }
+  25%
+  {
+    transform: translateY(-5px);
+  }
+  50%
+  {
+    transform: translateY(-7px);
+  }
+  75%
+  {
+    transform: translateY(-5px);
+  }
+  100%
+  {
+    transform: translateY(0);
+  }
+}
+ul li:nth-child(1){
+  animation-delay: 0s;
+}
+ul li:nth-child(2){
+  animation-delay: -1.2s;
+}
+ul li:nth-child(3){
+  animation-delay: -1s;
+}
+ul li:nth-child(4){
+  animation-delay: -.8s;
+}
+ul li:nth-child(5){
+  animation-delay: -.6s;
+}
+ul li:nth-child(6){
+  animation-delay: -.4s;
+}
+ul li:nth-child(7){
+  animation-delay: -.2s;
+}
+/*--- Loader 2 --- */
+.box-2 {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#000000 ;
+}
+
+.load {
+	margin: 0 5px;
+   width: 20px;
+   height: 20px;
+   background-color:#ffdc34;
+   border-radius: 50%;
+   display: inline-block;
+    -webkit-animation-name: transform;
+        animation-name: transform;
+    -webkit-animation-duration:1s;
+        animation-duration:1s;
+    -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+}
+.load:nth-child(2) {
+    background: #4dd599;
+    -webkit-animation-delay:.2s;
+        animation-delay:.2s;
+}
+.load:nth-child(3) {
+    background:#00918e;
+    -webkit-animation-delay:.4s;
+        animation-delay:.4s;
+}
+.load:nth-child(4) {
+    background: #110133;
+    -webkit-animation-delay:.6s;
+        animation-delay:.6s;
+}
+.load:nth-child(5) {
+    background: #293a80;
+    -webkit-animation-delay:.8s;
+        animation-delay:.8s;
+}
+.load:nth-child(6) {
+    background: #f39422;
+    -webkit-animation-delay:1s;
+        animation-delay:1s;
+}
+.load:nth-child(7) {
+    background: #ff6361;
+    -webkit-animation-delay:1.2s;
+        animation-delay:1.2s;
+}
+@-webkit-keyframes transform {
+    0% {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(-70px);
+                transform: translateY(-7px);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+}
+@keyframes transform {
+    0% {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(-20px);
+                transform: translateY(-5px);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+}
+
+
+/* loading animation */
+
+/* KEYFRAMES */
+@keyframes spin3D {
+  from {
+    transform: rotate3d(.5,.5,.5, 360deg);
+  }
+  to{
+    transform: rotate3d(0deg);
+  }
+}
+
+/* GRID STYLING */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  /* background-color: black; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:black; /* Add a semi-transparent background overlay if desired */
+  z-index: 999; /* Ensure the spinner is on top of other content */
+}
+
+.spinner-box {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.leo {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+.blue-orbit {
+	width: 165px;
+	height: 165px;
+  border: 1px solid #91daffa5;
+  -webkit-animation: spin3D 3s linear .2s infinite;
+}
+
+.green-orbit {
+	width: 120px;
+	height: 120px;
+  border: 1px solid #91ffbfa5;
+  -webkit-animation: spin3D 2s linear 0s infinite;
+}
+
+.red-orbit {
+	width: 90px;
+	height: 90px;
+  border: 1px solid #ffca91a5;
+  -webkit-animation: spin3D 1s linear 0s infinite;
+}
+
+.white-orbit {
+	width: 60px;
+	height: 60px;
+  border: 2px solid #ffffff;
+  -webkit-animation: spin3D 10s linear 0s infinite;
+}
+
+.w1 {
+  transform: rotate3D(1, 1, 1, 90deg);
+}
+
+.w2 {
+  transform: rotate3D(1, 2, .5, 90deg);
+}
+
+.w3 {
+  transform: rotate3D(.5, 1, 2, 90deg);
+}
+
