@@ -207,9 +207,13 @@ body {
     gap: 10px;
 
   }
+  .search-box{
+    width: fit-content;
+  }
   .btn-search ~ .input-search,
   .input-search:focus {
-    width: 350px;
+    width: 391px;;
+
     border-radius: 0px;
     background-color: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, .5);
