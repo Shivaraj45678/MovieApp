@@ -212,7 +212,7 @@ body {
   }
   .btn-search ~ .input-search,
   .input-search:focus {
-    width: 391px;;
+    width: 370px;;
 
     border-radius: 0px;
     background-color: transparent;
