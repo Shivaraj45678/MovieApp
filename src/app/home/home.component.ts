@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   Details: any[] = [];
   data: any;
   movieService: any;
+  carousel: any;
   constructor(private movieservice: MovieserviceService,
    private router:Router,private route:ActivatedRoute) { }
    navigateToDetailes(id:string){
@@ -45,27 +46,31 @@ this.router.navigate(['/movie-detailes',id])
 //     })
 
 //   }
-  hi() {
+
+hi() {
+  // Check if the query has a value before making the API call
+  if (this.query.trim() !== '') {
     this.movieservice.SearchMovie(this.query).subscribe((data: any) => {
-      console.log(data)
+      console.log(data);
       this.movies = [];
-      for (let movie of data.Search) {
-        let id = movie.imdbID;
-        let title = movie.Title;
-        let url = movie.Poster;
-        let year = movie.Year;
-        let type = movie.Type;
+      for (let movie of data.results) {
+        let id = movie.id;
+        let title = movie.original_title;
+        let url = movie.poster_path;
+        let year = movie.release_date;
+        let type = movie.media_type;
 
         let obj = new Movie(id, title, url, year, type);
 
         this.movies.push(obj);
-        console.log("movie: ", movie,this.selected)
+        console.log("movie: ", movie, this.selected);
       }
       this.movieservice.setMovies(this.movies);
-      console.log("list,", this.movies)
-
-    })
+      console.log("list,", this.movies);
+    });
   }
+}
+
   // console.log(movie.originalTitleText?.text)
 
 
@@ -79,12 +84,11 @@ this.router.navigate(['/movie-detailes',id])
   // }
   ngOnInit(): void {
     // this.movieservice.Movie().subscribe((data:any)=>{
-
     //   console.log(data)
     //   this.data=data.results;
     //   console.log(data)
-
-console.log(this.selected)
+    this.getMovies(1);
+// console.log()
   // this.route.paramMap.subscribe(params => {
   //   this.movieId = +params.get('id');
   //   this.fetchMovieDetails();
@@ -95,5 +99,13 @@ console.log(this.selected)
   //   this.videos = response.results;
   //   });
   //   }
+  getMovies(page:number){
+  this.movieservice.getNowPlayingMovies(page).subscribe((res:any)=>{
+    this.carousel=res.results
+    console.log(this.carousel)
+
+  })
+  }
+
 
 }

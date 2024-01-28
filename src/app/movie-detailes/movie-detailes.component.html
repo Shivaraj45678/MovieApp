@@ -2,32 +2,36 @@
   <div class="page container">
     <div class="hi">
       <div class="bg-image" *ngIf="image">
-        <header style=" background-image:url('https://image.tmdb.org/t/p/original/{{image.backdrop_path}}');background-repeat: none;">
+        <header
+          style=" background-image:url('https://image.tmdb.org/t/p/original/{{image.backdrop_path}}');background-repeat: none;">
           <div class="popular-movie-slider">
 
-            <img src="{{movieDetailes.Poster}}" class="poster">
+            <img src="https://image.tmdb.org/t/p/original/{{movieDetailes.poster_path}}" class="poster">
 
             <div class="popular-movie-slider-content">
-              <p class="release">{{movieDetailes.Released}}</p>
-              <h2 class="movie-name">{{movieDetailes.Title}}</h2>
+              <p class="release">{{movieDetailes.release_date}}</p>
+              <h2 class="movie-name">{{movieDetailes.title}}</h2>
               <ul class="category">
+
                 <p>{{image.genres[0].name}}</p>
                 <li>{{image.genres[1].name}}</li>
 
+
               </ul>
-              <p class="desc">{{movieDetailes.Plot}}</p>
+              <p class="desc">{{movieDetailes.overview}}</p>
 
               <div class="movie-info">
-                <i class="fa fa-clock-o"> &nbsp;&nbsp;&nbsp;<span>{{movieDetailes.Runtime}}</span></i>
-                <i class="fa fa-volume-up"> &nbsp;&nbsp;&nbsp;<span>{{image.spoken_languages[0].english_name}}</span></i>
-                <i class="fa fa-circle"> &nbsp;&nbsp;&nbsp;<span>Imdb: <b>{{movieDetailes.imdbRating}}/10</b></span></i>
+                <i class="fa fa-clock-o"> &nbsp;&nbsp;&nbsp;<span>{{movieDetailes.runtime}}</span></i>
+                <i class="fa fa-volume-up"> &nbsp;&nbsp;&nbsp;<span>{{image.original_language}}</span></i>
+                <i class="fa fa-circle"> &nbsp;&nbsp;&nbsp;<span>Imdb: <b>{{imdbid.imdbRating}}/10</b></span></i>
               </div>
 
               <div class="movie-btns">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <i class="fa fa-play"></i> &nbsp; Watch trailer
                 </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true" data-bs-backdrop="static">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-body">
@@ -41,25 +45,27 @@
                     </div>
                   </div>
                 </div>
-                <button class="read-more" (click)="scroll(target1)"><i class="fa fa-circle"></i> <i class="fa fa-circle"></i> <i class="fa fa-circle"></i>&nbsp; Read more</button>
+                <button class="read-more" (click)="scroll(target1)"><i class="fa fa-circle"></i> <i
+                    class="fa fa-circle"></i> <i class="fa fa-circle"></i>&nbsp; Read more</button>
               </div>
-           </div>
+            </div>
 
           </div>
         </header>
       </div>
-  <div class="cast">
-    <h1 class="heading">Movie Cast</h1>
-    <div class="cast-container">
-      <div class="actor-card" *ngFor="let cast of cast">
-          <img (click)=" navigateToActorDetailes(cast.id)" [src]="cast.profile_path ? 'https://image.tmdb.org/t/p/original/' + cast.profile_path : 'path_to_default_image'" >
-          <p class="actor-name">{{ cast.name }}</p>
-          <p class="character-name" style="color: rgb(175, 212, 25);">{{ cast.character }}</p>
-      </div>
+      <div class="cast">
+        <h1 class="heading">Movie Cast</h1>
+        <div class="cast-container">
+          <div class="actor-card" *ngFor="let cast of cast">
+            <img (click)=" navigateToActorDetailes(cast.id)"
+              [src]="cast.profile_path ? 'https://image.tmdb.org/t/p/original/' + cast.profile_path : 'path_to_default_image'">
+            <p class="actor-name">{{ cast.name }}</p>
+            <p class="character-name" style="color: rgb(175, 212, 25);">{{ cast.character }}</p>
+          </div>
 
-    </div>
-  </div>
-  <!-- <div class="card" style="width: 5rem;height: rem;" *ngFor="let cast of cast">
+        </div>
+      </div>
+      <!-- <div class="card" style="width: 5rem;height: rem;" *ngFor="let cast of cast">
     <img [src]="cast.profile_path ? 'https://image.tmdb.org/t/p/original/' + cast.profile_path : 'path_to_default_image'" class="card-img-top" alt="...">
     <div class="card-body">
       <p class="actor-name">{{ cast.name }}</p>
@@ -68,12 +74,14 @@
   </div> -->
 
 
-      <div class="related" >
+      <div class="related">
         <h2 class="heading">Related Movies</h2>
 
         <div class="cards-wrapper">
-          <div *ngFor="let movie of movies"  class="relatedcard">
-            <a ><img  class=" "  [src]="movie.url == 'N/A'? 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png':movie.url" alt="Card image cap" style="height: 6cm;cursor: pointer;width: 4cm;" ></a>
+          <div *ngFor="let movie of similarmovie" class="relatedcard">
+            <a><img class=" "
+                [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'https://demofree.sirv.com/nope-not-here.jpg'"
+                alt="Card image cap" style="height: 6cm;cursor: pointer;width: 4cm;"></a>
           </div>
 
         </div>
@@ -83,62 +91,64 @@
 
       <div class="more" #target1>
         <h2 class="heading">More Detailes</h2>
-        <div class="container table-responsive py-5">
+        <div *ngIf="imdbid" class="container table-responsive py-5">
           <table class="table borderless">
 
             <tbody>
               <tr>
                 <th scope="row">Director</th>
-                <td>{{movieDetailes.Director}}</td>
+                <td>{{imdbid.Director}}</td>
 
               </tr>
               <tr>
                 <th scope="row">Writer</th>
-                <td>{{movieDetailes.Writer}}</td>
+                <td>{{imdbid.Writer}}</td>
 
               </tr>
               <tr>
                 <th scope="row">Actors</th>
-                <td>{{movieDetailes.Actors}}</td>
+                <td>{{imdbid.Actors}}</td>
               </tr>
-               <tr>
+              <tr>
                 <th scope="row">Released</th>
-                <td>{{movieDetailes.Released}}</td>
+                <td>{{imdbid.Released}}</td>
 
               </tr>
               <tr>
                 <th scope="row">Awards</th>
-                <td>{{movieDetailes.Awards}}</td>
+                <td>{{imdbid.Awards}}</td>
 
               </tr>
               <tr>
                 <th scope="row">Genre</th>
-                <td>{{movieDetailes.Genre}}</td>
+                <td>{{imdbid.Genre}}</td>
 
               </tr>
               <tr>
                 <th scope="row">Country</th>
-                <td>{{movieDetailes.Country}}</td>
+                <td>{{imdbid.Country}}</td>
               </tr>
               <tr>
                 <th scope="row">BoxOffice</th>
-                <td>{{movieDetailes.BoxOffice}}</td>
+                <td>{{imdbid.BoxOffice}}</td>
               </tr>
               <tr>
                 <th scope="row">imdbRating</th>
-                <td>{{movieDetailes.imdbRating}} / 10</td>
+                <td>{{imdbid.imdbRating}} / 10</td>
               </tr>
               <tr>
                 <th scope="row">OTT</th>
-                <td>{{movieDetailes.DVD}}</td>
+                <td>{{imdbid.DVD}}</td>
               </tr>
 
             </tbody>
           </table>
-          </div>
+        </div>
       </div>
 
-
+      <!-- <div>
+  {{imdbid.Year}}
+</div> -->
 
       <footer>
 
@@ -158,11 +168,13 @@
         </ul>
 
 
-      <div class="socail-box">
-        <i class="fa fa-facebook-f"></i>
-        <i class="fa fa-twitter"></i>
-        <a target="_blank" style="color: #fff;" href="https://www.instagram.com/s_shiva_raju?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa fa-instagram"></i></a>
-      </div>
+        <div class="socail-box">
+          <i class="fa fa-facebook-f"></i>
+          <i class="fa fa-twitter"></i>
+          <a target="_blank" style="color: #fff;"
+            href="https://www.instagram.com/s_shiva_raju?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+              class="fa fa-instagram"></i></a>
+        </div>
 
       </footer>
 

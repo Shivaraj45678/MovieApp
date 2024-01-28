@@ -29,7 +29,15 @@ const options={headers:headers}
 return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US&api_key=8b92fe82ba9d18a8341368b3ac90c72b`,options);
  }
 SearchMovie(query:String){
-return this.http.get<any>(`https://www.omdbapi.com/?s=${query}&apikey=80dfd8aa&`);
+  const headers=new HttpHeaders({
+    accept: 'application/json',
+ Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NGRkYTlmMWM1MzcyYzU0ZDQ5N2ExNjVjNDMwMWI4NyIsInN1YiI6IjY0ODE4YmEwZDJiMjA5MDBlYmJmMDE4NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bdC5ud4tCDqssKF77_RLdhgWHOlupRJmapa_DeZe7gQ'
+   });
+
+
+ const options={headers:headers}
+return this.http.get<any>(`https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=en-US&page=1`,options);
+// return this.http.get<any>(`https://www.omdbapi.com/?s=${query}&apikey=80dfd8aa&`);
 }
 //    SearchMovie(query:String){
 //     const headers=new HttpHeaders({
@@ -50,7 +58,15 @@ return this.http.get<any>(`https://imdb-top-100-movies.p.rapidapi.com/`,options)
    }
 
 getMovieByID(id:string):Observable<boolean> {
-  return this.http.get<any>(`https://www.omdbapi.com/?i=${id}&apikey=80dfd8aa&`);
+  const headers=new HttpHeaders({
+    accept: 'application/json',
+ Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NGRkYTlmMWM1MzcyYzU0ZDQ5N2ExNjVjNDMwMWI4NyIsInN1YiI6IjY0ODE4YmEwZDJiMjA5MDBlYmJmMDE4NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bdC5ud4tCDqssKF77_RLdhgWHOlupRJmapa_DeZe7gQ'
+   });
+
+
+ const options={headers:headers}
+return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}?language=en-US`,options);
+
 }
 // getMovieByID(id:string):Observable<boolean> {
 //   return this.http.get<any>(`https://yts.mx/api/v2/movie_details.json?imdb_id=${id}`);
@@ -118,7 +134,6 @@ getNowPlayingMovies(page:number){
  return this.http.get<any>(`https://api.themoviedb.org/3/movie/now_playing?language=te-IN&page=${page}`,options);
 }
 
-
 getMoviesBySorting(){
   const headers=new HttpHeaders({
     accept: 'application/json',
@@ -127,4 +142,18 @@ getMoviesBySorting(){
  const options={headers:headers}
  return this.http.get<any>(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&primary_release_year=2023&sort_by=primary_release_date.desc&with_original_language=kn`,options);
 }
+getmovieByImdb(id:string){
+  return this.http.get<any>(`https://www.omdbapi.com/?i=${id}&apikey=80dfd8aa&`);
+}
+
+
+getMoviesBySimilar(id:string){
+  const headers=new HttpHeaders({
+    accept: 'application/json',
+ Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NGRkYTlmMWM1MzcyYzU0ZDQ5N2ExNjVjNDMwMWI4NyIsInN1YiI6IjY0ODE4YmEwZDJiMjA5MDBlYmJmMDE4NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bdC5ud4tCDqssKF77_RLdhgWHOlupRJmapa_DeZe7gQ'
+   });
+ const options={headers:headers}
+ return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}/similar`,options);
+}
+
 }

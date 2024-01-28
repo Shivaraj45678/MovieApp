@@ -21,6 +21,7 @@ import { MatGridList } from '@angular/material/grid-list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadingComponent } from './loader/loading/loading.component';
+import {MatIconModule} from '@angular/material/icon'
 // import { YouTubePlayer } from '@angular/youtube-player';
 // import { LoadingSpinnerModule } from 'ngx-loading-spinner';
 
@@ -47,7 +48,8 @@ import { LoadingComponent } from './loader/loading/loading.component';
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatGridListModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatIconModule,
   ],
   providers: [
 
