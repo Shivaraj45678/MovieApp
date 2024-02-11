@@ -3,9 +3,8 @@
   <div *ngFor="let movie of topmovies" class=" card">
       <a ><img  class="card-img-top"  [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'path_to_default_image'" alt="Card image cap" style="cursor: pointer;" ></a>
       <div class="card-block">
-<small >Title:&nbsp;&nbsp;{{movie.title}}</small><br>
-<small style="color: rgb(94, 255, 0);">Type:&nbsp;&nbsp;{{movie.type}}</small>
-<p>Year:{{movie.year}}</p>
+<h6 >Title:&nbsp;&nbsp;{{movie.title}}</h6><br>
+
 
       </div>
   </div>
@@ -16,8 +15,7 @@
       <a ><img  class="card-img-top"  [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'path_to_default_image'" alt="Card image cap" style="cursor: pointer;" ></a>
       <div class="card-block">
 <small >Title:&nbsp;&nbsp;{{movie.title}}</small><br>
-<small style="color: rgb(94, 255, 0);">Type:&nbsp;&nbsp;{{movie.type}}</small>
-<p>Year:{{movie.year}}</p>
+
 
       </div>
   </div>
@@ -28,8 +26,7 @@
       <a ><img  class="card-img-top"  [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'path_to_default_image'" alt="Card image cap" style="cursor: pointer;" ></a>
       <div class="card-block">
 <small >Title:&nbsp;&nbsp;{{movie.title}}</small><br>
-<small style="color: rgb(94, 255, 0);">Type:&nbsp;&nbsp;{{movie.type}}</small>
-<p>Year:{{movie.year}}</p>
+
 
       </div>
   </div>

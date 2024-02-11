@@ -73,9 +73,15 @@ body {
 @media (max-width: 650px){
   .grid-item{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 
+  }
+  .card{
+    height: 150px;
+  }
+  .card-img-top{
+    height: 100px;
   }
 
 }
