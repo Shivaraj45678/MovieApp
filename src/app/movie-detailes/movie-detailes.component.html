@@ -1,7 +1,7 @@
 <div class="main">
   <div class="page container">
     <div class="hi">
-      <app-navbar></app-navbar>
+      <!-- <app-navbar></app-navbar> -->
       <div class="bg-image" *ngIf="image">
         <header
           style=" background-image:url('https://image.tmdb.org/t/p/original/{{image.backdrop_path}}');background-repeat: none;">
@@ -76,7 +76,7 @@
 
 
       <div class="related">
-        <h2 class="heading">Related Movies</h2>
+        <h2 class="heading">Similar Movies</h2>
 
         <div class="cards-wrapper">
           <div *ngFor="let movie of similarmovie" class="relatedcard">
@@ -87,8 +87,6 @@
 
         </div>
       </div>
-
-
 
       <div class="more" #target1>
         <h2 class="heading">More Detailes</h2>
@@ -152,10 +150,10 @@
 </div> -->
 
 
-<app-defaultmovieslayout></app-defaultmovieslayout>
+      <!-- <app-defaultmovieslayout></app-defaultmovieslayout> -->
 
     </div>
-<app-footer></app-footer>
+    <app-footer></app-footer>
 
   </div>
 

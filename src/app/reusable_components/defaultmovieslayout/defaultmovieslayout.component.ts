@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MovieserviceService } from 'src/app/services/movieservice.service';
 import { SortedMoviesListService } from 'src/app/services/sorted-movies-list.service';
 
@@ -12,7 +13,10 @@ topmovies: any;
   upcommingmovies: any;
   nowplyingmovies: any;
   movies: any;
-constructor(private service:SortedMoviesListService){}
+constructor(private service:SortedMoviesListService,private router:Router,private route:ActivatedRoute){}
+navigateToDetailes(id:string){
+  this.router.navigate(['/movie-detailes',id])
+     }
 ngOnInit(){
 this.fetchNowPlayingMovies();
 this.fetchTopRatedMovies();

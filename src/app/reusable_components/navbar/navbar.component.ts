@@ -95,7 +95,7 @@ hi() {
     //   console.log(data)
     //   this.data=data.results;
     //   console.log(data)
-    this.getMovies(1);
+    // this.getMovies(1);
 // console.log()
   // this.route.paramMap.subscribe(params => {
   //   this.movieId = +params.get('id');
@@ -107,12 +107,12 @@ hi() {
   //   this.videos = response.results;
   //   });
   //   }
-  getMovies(page:number){
-  this.sortMovies.getNowPlayingMovies(page).subscribe((res:any)=>{
-    this.carousel=res.results
-    console.log(this.carousel)
+  // getMovies(page:number){
+  // this.sortMovies.getNowPlayingMovies(page).subscribe((res:any)=>{
+  //   this.carousel=res.results
+  //   console.log(this.carousel)
 
-  })
-  }
+  // })
+  // }
 
 }
