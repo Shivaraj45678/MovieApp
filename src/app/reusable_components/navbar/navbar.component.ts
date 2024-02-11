@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie, Video } from 'src/app/model';
 import { MovieserviceService } from 'src/app/services/movieservice.service';
 import { SortedMoviesListService } from 'src/app/services/sorted-movies-list.service';
+import { ToastsComponent } from '../toasts/toasts.component';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +11,8 @@ import { SortedMoviesListService } from 'src/app/services/sorted-movies-list.ser
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  @ViewChild('toast') toastComponent!: ToastsComponent;
+
   title = 'movieapp';
   selected:any;
   movieId: any;
@@ -21,6 +24,8 @@ export class NavbarComponent {
   data: any;
   movieService: any;
   carousel: any;
+  moviefind: any;
+  movie: any;
   constructor(private movieservice: MovieserviceService,
     private sortMovies:SortedMoviesListService,
    private router:Router,private route:ActivatedRoute) { }
@@ -44,28 +49,35 @@ this.router.navigate(['/movie-detailes',id])
 //   }
 
 hi() {
-  // Check if the query has a value before making the API call
   if (this.query.trim() !== '') {
     this.movieservice.SearchMovie(this.query).subscribe((data: any) => {
       console.log(data);
-      this.movies = [];
-      for (let movie of data.results) {
-        let id = movie.id;
-        let title = movie.title;
-        let url = movie.poster_path;
-        let year = movie.release_date;
-        let type = movie.media_type;
+      // Filter out movies with null poster_path and null profile_path
+      this.movies = data.results.filter((movie: { poster_path: null; profile_path: null; }) => movie.poster_path !== null && movie.profile_path !== null);
 
-        let obj = new Movie(id, title, url, year, type);
-
-        this.movies.push(obj);
-        console.log("movie: ", movie, this.selected);
+      if (this.movies.length === 0) {
+        const messageElement = document.getElementById("message");
+        if (messageElement !== null) {
+          messageElement.innerHTML = "No Movie Found !";
+        }
+      } else {
+        // Clear the message when movies are found
+        const messageElement = document.getElementById("message");
+        if (messageElement !== null) {
+          messageElement.innerHTML = "";
+        }
       }
-      this.movieservice.setMovies(this.movies);
-      console.log("list,", this.movies);
     });
   }
 }
+
+
+
+// showToast(message: string) {
+//     this.toastComponent.message = message;
+//     this.toastComponent.showtoast();
+//     setTimeout(() => this.toastComponent.hideToast(), 5000); // Hide toast after 5 seconds
+//   }
 
   // console.log(movie.originalTitleText?.text)
 

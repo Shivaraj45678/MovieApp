@@ -7,10 +7,12 @@ html {
 }
 .card {
   background-color: black;
-  height: 300px;
+  height: 250px;
+  margin-bottom: 20px;
+
 }
 .card-img-top {
-  height: 200px;
+  height: 250px;
 }
 
 body {
@@ -39,7 +41,7 @@ body {
 }
 .grid-item {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
 }
 @media (max-width: 1200px) {
@@ -101,6 +103,12 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+  }
+  .card{
+    height: 150px;
+  }
+  .card-img-top{
+    height: 150px;
   }
 }
 .card:hover {
