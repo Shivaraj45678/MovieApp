@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MovieserviceService } from 'src/app/services/movieservice.service';
+import { SortedMoviesListService } from 'src/app/services/sorted-movies-list.service';
 
 @Component({
   selector: 'app-popular-movies',
@@ -10,7 +11,7 @@ export class PopularMoviesComponent {
   ngOnInit(){
     this.getMovies();
   }
-constructor(private servvice:MovieserviceService){
+constructor(private servvice:SortedMoviesListService){
 }
 getMovies(){
   this.servvice.getMoviesBySorting().subscribe((data)=>{

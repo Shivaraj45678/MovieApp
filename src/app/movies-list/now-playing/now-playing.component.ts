@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MovieserviceService } from 'src/app/services/movieservice.service';
+import { SortedMoviesListService } from 'src/app/services/sorted-movies-list.service';
 
 @Component({
   selector: 'app-now-playing',
@@ -20,7 +21,7 @@ export class NowPlayingComponent {
     this.fetchNowPlayingMovies(this.page);
   }
 
-  constructor(private service: MovieserviceService, private route: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router) {}
+  constructor(private service: SortedMoviesListService, private route: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router) {}
 
   fetchNowPlayingMovies(page: number) {
     this.loading = true; // Set loading flag to true before making the HTTP request

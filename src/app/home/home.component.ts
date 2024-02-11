@@ -4,6 +4,7 @@ import { Movie } from '../model';
 import { Router } from '@angular/router';
 import { Video } from '../model';
 import { ActivatedRoute } from '@angular/router';
+import { SortedMoviesListService } from '../services/sorted-movies-list.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
   carousel: any;
   constructor(
-    private movieservice: MovieserviceService,
+    private movieservice: SortedMoviesListService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
@@ -40,7 +41,7 @@ export class HomeComponent implements OnInit {
   carouselImg(page: number) {
     this.movieservice.getNowPlayingMovies(page).subscribe((res: any) => {
       this.carousel = res.results;
-      console.log(this.carousel);
+      // console.log(this.carousel);
     });
   }
 }

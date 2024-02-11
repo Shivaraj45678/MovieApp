@@ -23,7 +23,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadingComponent } from './loader/loading/loading.component';
 import {MatIconModule} from '@angular/material/icon';
 import { NavbarComponent } from './reusable_components/navbar/navbar.component';
-import { FooterComponent } from './reusable_components/footer/footer.component'
+import { FooterComponent } from './reusable_components/footer/footer.component';
+import { DefaultmovieslayoutComponent } from './reusable_components/defaultmovieslayout/defaultmovieslayout.component'
 // import { YouTubePlayer } from '@angular/youtube-player';
 // import { LoadingSpinnerModule } from 'ngx-loading-spinner';
 
@@ -41,6 +42,7 @@ import { FooterComponent } from './reusable_components/footer/footer.component'
     LoadingComponent,
     NavbarComponent,
     FooterComponent,
+    DefaultmovieslayoutComponent,
 
   ],
   imports: [

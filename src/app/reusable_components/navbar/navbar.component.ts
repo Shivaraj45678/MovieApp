@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie, Video } from 'src/app/model';
 import { MovieserviceService } from 'src/app/services/movieservice.service';
+import { SortedMoviesListService } from 'src/app/services/sorted-movies-list.service';
 
 @Component({
   selector: 'app-navbar',
@@ -21,6 +22,7 @@ export class NavbarComponent {
   movieService: any;
   carousel: any;
   constructor(private movieservice: MovieserviceService,
+    private sortMovies:SortedMoviesListService,
    private router:Router,private route:ActivatedRoute) { }
    navigateToDetailes(id:string){
 this.router.navigate(['/movie-detailes',id])
@@ -94,7 +96,7 @@ hi() {
   //   });
   //   }
   getMovies(page:number){
-  this.movieservice.getNowPlayingMovies(page).subscribe((res:any)=>{
+  this.sortMovies.getNowPlayingMovies(page).subscribe((res:any)=>{
     this.carousel=res.results
     console.log(this.carousel)
 
