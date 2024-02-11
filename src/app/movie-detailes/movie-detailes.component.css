@@ -1,5 +1,5 @@
 .page{
-  background-color: #000;
+  background-color: rgb(26,30,37);
 }
 
 *{
@@ -12,10 +12,10 @@ body{
   font-family: 'Roboto', sans-serif;
   overflow:hidden;
   overflow-y:scroll;
-  background-color: #000;
+  background-color: black;
 }
 .main{
-  background-color: #000;
+  background-color: black;
 }
 
 header{
@@ -239,7 +239,7 @@ footer{
   align-items:center;
 }
 .videos,.more,.related,.cast{
-  background:#272525;
+  background:rgb(26,30,37);
   color:#fff;
   padding:10px 15px;
   /* display: grid; */
@@ -247,7 +247,7 @@ footer{
   align-items:center;
 }
 .table>:not(caption)>*>* {
-  background:#272525;
+  background:rgb(26,30,37);
   color:#fff;
 font-size: smaller;
 }
@@ -615,7 +615,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-background-color: #272525;
+background-color: rgb(26,30,37);
 }
 
 .actor-card img {
@@ -637,7 +637,7 @@ iframe{
  align-items: center;
 }
 .modal-content{
-  background-color: #000 !important;
+  background-color: rgb(26,30,37) !important;
   /* width: fit-content !important; */
 }
 

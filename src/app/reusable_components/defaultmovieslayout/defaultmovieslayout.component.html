@@ -3,7 +3,6 @@
   <div *ngFor="let movie of topmovies" class=" card">
       <a ><img  class="card-img-top"  [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'path_to_default_image'" alt="Card image cap" style="cursor: pointer;" ></a>
       <div class="card-block">
-<h6 >Title:&nbsp;&nbsp;{{movie.title}}</h6><br>
 
 
       </div>
@@ -14,7 +13,6 @@
   <div *ngFor="let movie of nowplyingmovies" class=" card">
       <a ><img  class="card-img-top"  [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'path_to_default_image'" alt="Card image cap" style="cursor: pointer;" ></a>
       <div class="card-block">
-<small >Title:&nbsp;&nbsp;{{movie.title}}</small><br>
 
 
       </div>
@@ -25,7 +23,7 @@
   <div *ngFor="let movie of upcommingmovies" class=" card">
       <a ><img  class="card-img-top"  [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'path_to_default_image'" alt="Card image cap" style="cursor: pointer;" ></a>
       <div class="card-block">
-<small >Title:&nbsp;&nbsp;{{movie.title}}</small><br>
+<!-- <small >Title:&nbsp;&nbsp;{{movie.title}}</small><br> -->
 
 
       </div>

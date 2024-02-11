@@ -51,7 +51,7 @@ hi() {
       this.movies = [];
       for (let movie of data.results) {
         let id = movie.id;
-        let title = movie.original_title;
+        let title = movie.title;
         let url = movie.poster_path;
         let year = movie.release_date;
         let type = movie.media_type;

@@ -48,7 +48,7 @@
     <a ><img (click)=" navigateToDetailes(movie.id)" class="card-img-top" [src]="movie.url ? 'https://image.tmdb.org/t/p/original/' + movie.url : 'https://demofree.sirv.com/nope-not-here.jpg'"  alt="Card image cap" style="cursor: pointer;" ></a>
       <div class="card-block">
 <small >Title:&nbsp;&nbsp;{{movie.title}}</small><br>
-<small style="color: rgb(94, 255, 0);">Type:&nbsp;&nbsp;{{movie.type}}</small>
+<!-- <small style="color: rgb(94, 255, 0);">Type:&nbsp;&nbsp;{{movie.type}}</small> -->
 <p>Year:{{movie.year}}</p>
 <div *ngFor="let item of Details ">
 <span>{{item.actors}}</span>
