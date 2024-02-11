@@ -8,6 +8,7 @@ import { PopularMoviesComponent } from './movies-list/popular-movies/popular-mov
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
+  {path:'home',component:HomeComponent},
   {path:'movie-detailes/:id',component:MovieDetailesComponent},
   {path:'detailes',component:MovieDetailesComponent},
   {path:'movies/id',component:HomeComponent},

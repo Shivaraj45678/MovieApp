@@ -1,6 +1,7 @@
 <div class="main">
   <div class="page container">
     <div class="hi">
+      <app-navbar></app-navbar>
       <div class="bg-image" *ngIf="image">
         <header
           style=" background-image:url('https://image.tmdb.org/t/p/original/{{image.backdrop_path}}');background-repeat: none;">
@@ -150,37 +151,12 @@
   {{imdbid.Year}}
 </div> -->
 
-      <footer>
 
-        <div class="logo-box">
-          <p class="logo">
-
-            Movie<span>World</span>
-          </p>
-          <p><i class="fa fa-copyright"></i> 2022-2023,SSR</p>
-        </div>
-
-        <ul>
-          <li>Info</li>
-          <li>Top Movies</li>
-          <li>Home</li>
-          <li>news</li>
-        </ul>
-
-
-        <div class="socail-box">
-          <i class="fa fa-facebook-f"></i>
-          <i class="fa fa-twitter"></i>
-          <a target="_blank" style="color: #fff;"
-            href="https://www.instagram.com/s_shiva_raju?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
-              class="fa fa-instagram"></i></a>
-        </div>
-
-      </footer>
 
 
     </div>
-  </div>
+<app-footer></app-footer>
 
+  </div>
 
 </div>

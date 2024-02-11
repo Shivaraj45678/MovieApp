@@ -4,60 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>movie-world</title>
+  <title>movieworld</title>
 </head>
 <body  class="container">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><strong style="margin-left: 50px;">Movie World</strong></a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-
-        <ul class="navbar-nav ms-md-auto gap-2">
-          <li class="nav-item rounded">
-            <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill me-2"></i>Home</a>
-          </li>
-          <li class="nav-item rounded">
-            <a class="nav-link" routerLink="/new">New Movies</a>
-          </li>
-          <li class="nav-item rounded">
-            <a class="nav-link" href="/popularMovies">Web Series</a>
-          </li>
-          <li class="nav-item dropdown rounded">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Languages</a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Telugu</a></li>
-              <li><a class="dropdown-item" href="#">Kannada</a></li>
-              <li><a class="dropdown-item" href="#">Hindi</a></li>
-              <li><a class="dropdown-item" href="#">Tamil</a></li>
-              <li><a class="dropdown-item" href="#">Malayalam</a></li>
-
-            </ul>
-          </li>
-          <li >
-
-          </li>
-        </ul>
-
-      </div>
-
-    </div>
-    <div class="search-box">
-      <button (click)="hi()" type="submit" class="btn-search"><mat-icon>search</mat-icon></button>
-      <input [(ngModel)]="query" type="text" class="input-search" placeholder="Type to Search...">
-    </div>
-
-  </nav>
+  <app-navbar></app-navbar>
+<div class="page">
   <div id="carouselExampleAutoplaying" class="carousel slide d-flex " data-bs-ride="carousel" style="height: 400px;">
     <div class="carousel-inner">
       <div class="carousel-item active" *ngFor="let item of carousel; let i = index" [class.active]="i === 0">
         <img [src]="'https://image.tmdb.org/t/p/original/' + item.backdrop_path" class="d-block w-100" alt="...">
         <div class="carousel-caption">
-          <h5>Your Text Here</h5>
-         <h2>fghjjhjgfxcvbnjuyf</h2>
         </div>
       </div>
     </div>
@@ -71,24 +27,12 @@
     </button>
   </div>
   <div >
-    <div class="grid-item mt-4" >
-      <div *ngFor="let movie of movies" class=" card">
-
-        <a ><img (click)=" navigateToDetailes(movie.id)" class="card-img-top" [src]="movie.url ? 'https://image.tmdb.org/t/p/original/' + movie.url : 'https://demofree.sirv.com/nope-not-here.jpg'"  alt="Card image cap" style="cursor: pointer;" ></a>
-          <div class="card-block">
-  <small >Title:&nbsp;&nbsp;{{movie.title}}</small><br>
-  <small style="color: rgb(94, 255, 0);">Type:&nbsp;&nbsp;{{movie.type}}</small>
-  <p>Year:{{movie.year}}</p>
-  <div *ngFor="let item of Details ">
-    <span>{{item.actors}}</span>
   </div>
-          </div>
-      </div>
-    </div>
-  </div>
-
+  <app-footer></app-footer>
+</div>
 
 </body>
+
 </html>
 
 
