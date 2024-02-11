@@ -36,7 +36,7 @@ SearchMovie(query:String){
 
 
  const options={headers:headers}
-return this.http.get<any>(`https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=en-US&page=1`,options);
+return this.http.get<any>(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`,options);
 // return this.http.get<any>(`https://www.omdbapi.com/?s=${query}&apikey=80dfd8aa&`);
 }
 //    SearchMovie(query:String){
