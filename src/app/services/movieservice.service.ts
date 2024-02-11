@@ -139,7 +139,7 @@ getMoviesBySimilar(id:string){
  Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NGRkYTlmMWM1MzcyYzU0ZDQ5N2ExNjVjNDMwMWI4NyIsInN1YiI6IjY0ODE4YmEwZDJiMjA5MDBlYmJmMDE4NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bdC5ud4tCDqssKF77_RLdhgWHOlupRJmapa_DeZe7gQ'
    });
  const options={headers:headers}
- return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}/similar`,options);
+ return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}/recommendations`,options);
 }
 
 }
