@@ -76,11 +76,11 @@
 
 
       <div class="related">
-        <h2 class="heading">Similar Movies</h2>
+        <h2 class="heading">Recommended Movies</h2>
 
         <div class="cards-wrapper">
           <div *ngFor="let movie of similarmovie" class="relatedcard">
-            <a><img class=" "
+            <a><img (click)=" navigateToDetailes(movie.id)" class=" "
                 [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'https://demofree.sirv.com/nope-not-here.jpg'"
                 alt="Card image cap" style="height: 6cm;cursor: pointer;width: 4cm;"></a>
           </div>
@@ -144,7 +144,62 @@
           </table>
         </div>
       </div>
+      <!-- <div class="more" #target1> -->
+        <h2 class="heading">More Detailes</h2>
+        <div *ngFor="let review of reviews" class="container table-responsive py-5">
+          <table class="table borderless">
 
+            <tbody>
+              <tr>
+                <th scope="row">Director</th>
+                <td>{{review.author}}</td>
+
+              </tr>
+              <tr>
+                <th scope="row">Writer</th>
+                <td>{{review.content}}</td>
+
+              </tr>
+              <tr>
+                <th scope="row">Actors</th>
+                <!-- <td>{{.Actors}}</td> -->
+              </tr>
+              <tr>
+                <th scope="row">Released</th>
+                <!-- <td>{{.Released}}</td> -->
+
+              </tr>
+              <tr>
+                <th scope="row">Awards</th>
+                <!-- <td>{{.Awards}}</td> -->
+
+              </tr>
+              <tr>
+                <th scope="row">Genre</th>
+                <td>{{imdbid.Genre}}</td>
+
+              </tr>
+              <tr>
+                <th scope="row">Country</th>
+                <td>{{imdbid.Country}}</td>
+              </tr>
+              <tr>
+                <th scope="row">BoxOffice</th>
+                <td>{{imdbid.BoxOffice}}</td>
+              </tr>
+              <tr>
+                <th scope="row">imdbRating</th>
+                <td>{{imdbid.imdbRating}} / 10</td>
+              </tr>
+              <tr>
+                <th scope="row">OTT</th>
+                <td>{{imdbid.DVD}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+        <!-- </div> -->
+      </div>
       <!-- <div>
   {{imdbid.Year}}
 </div> -->

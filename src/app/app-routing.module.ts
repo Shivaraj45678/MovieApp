@@ -8,16 +8,12 @@ import { PopularMoviesComponent } from './movies-list/popular-movies/popular-mov
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'home',component:HomeComponent},
   {path:'movie-detailes/:id',component:MovieDetailesComponent},
   {path:'detailes',component:MovieDetailesComponent},
   {path:'movies/id',component:HomeComponent},
   { path: 'new', component: NowPlayingComponent },
-  // { path: 'top', component: TopRatedComponent },
-  // { path: 'languagewise', component: LanguageComponent },
   { path: 'actordetailes/:id', component: ActordetailesComponent },
   { path: 'popularMovies', component: PopularMoviesComponent },
-
 ];
 
 @NgModule({

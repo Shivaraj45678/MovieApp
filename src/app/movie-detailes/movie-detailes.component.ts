@@ -41,6 +41,9 @@ export class MovieDetailesComponent implements OnInit {
   navigateToActorDetailes(id: string) {
     this.router.navigate(['/actordetailes', id]);
   }
+  navigateToDetailes(id:string){
+    this.router.navigate(['/movie-detailes',id])
+       }
 
   fetchTrailer() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -70,7 +73,7 @@ export class MovieDetailesComponent implements OnInit {
     if (id !== null) {
       this.movieservice.MovieReviews(id).subscribe((res) => {
         this.reviews = res.results;
-        console.log(this.reviews);
+        console.log("review",this.reviews);
       });
     }
   }
@@ -126,7 +129,11 @@ export class MovieDetailesComponent implements OnInit {
       this.fetchReview();
       this.getCast();
       this.getmoviesbySimilar(id);
+      // this.navigateToDetailes(id);
+
+
     }
+
   }
 
   getmoviesbySimilar(id:string){

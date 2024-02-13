@@ -26,11 +26,13 @@ export class NavbarComponent {
   carousel: any;
   moviefind: any;
   movie: any;
+  movieDetailes: any;
+  // url: this;
   constructor(private movieservice: MovieserviceService,
     private sortMovies:SortedMoviesListService,
    private router:Router,private route:ActivatedRoute) { }
    navigateToDetailes(id:string){
-this.router.navigate(['/movie-detailes',id])
+     this.router.navigate(['/movie-detailes',id])
    }
 
 //   ReadMore(id: string) {
@@ -44,7 +46,8 @@ this.router.navigate(['/movie-detailes',id])
 // console.log("details: ", actors)
 
 //       }
-//     })
+//     })7
+
 
 //   }
 
@@ -91,16 +94,18 @@ hi() {
   //   })
   // }
   ngOnInit(): void {
-    // this.movieservice.Movie().subscribe((data:any)=>{
-    //   console.log(data)
-    //   this.data=data.results;
-    //   console.log(data)
-    // this.getMovies(1);
-// console.log()
-  // this.route.paramMap.subscribe(params => {
-  //   this.movieId = +params.get('id');
-  //   this.fetchMovieDetails();
-  //   });
+    const id =this.route.snapshot.paramMap.get('id');
+    if (id !== null) {
+    this.movieservice.getMovieByID(id).subscribe((data:any)=>{
+      this.movieDetailes=data;
+      console.log(this.movieDetailes)
+
+  //     this.mdata=[];
+  //     for(let item of data){
+  // let detail=data[]
+  //     }
+      console.log(this.movieDetailes)
+    });
   }
   // fetchTrailer() {
   //   this.movieservice.getMovieVideos(this.movieId).subscribe(response => {
@@ -115,4 +120,4 @@ hi() {
   // })
   // }
 
-}
+}}
