@@ -27,6 +27,7 @@ export class MovieDetailesComponent implements OnInit {
 review: any;
 reviews: any[] = []; // Define reviews array to store fetched reviews
   showMore: { [key: number]: boolean } = {};
+  sanitizedVideoUrldefault: SafeResourceUrl='';
 
   scroll(el: HTMLElement) {
     el.scrollIntoView();
@@ -64,9 +65,13 @@ reviews: any[] = []; // Define reviews array to store fetched reviews
           this.mainVideo = this.videos.find(
             (video) => video.type === 'Trailer'
           );
-          console.log(this.mainVideo);
-          if (this.mainVideo && this.mainVideo.key) {
+          console.log(this.mainVideo,this.mainVideo?this.mainVideo:this.videos[0].key)
+          if ( this.mainVideo.key ) {
             const videoUrl = `https://www.youtube.com/embed/${this.mainVideo.key}`;
+            this.sanitizedVideoUrl =
+              this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
+          }else{
+            const videoUrl = `https://www.youtube.com/embed/${this.videos[0].key}`;
             this.sanitizedVideoUrl =
               this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
           }
