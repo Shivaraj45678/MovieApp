@@ -18,11 +18,15 @@ export class MovieDetailesComponent implements OnInit {
   movies: Movie[];
   mainVideo: any;
   additionalVideos: any[] = [];
-  reviews: any;
+  // reviews: any;
   image: any;
   cast: any;
   imdbid: any;
   similarmovie: any;
+  test: any;
+review: any;
+reviews: any[] = []; // Define reviews array to store fetched reviews
+  showMore: { [key: number]: boolean } = {};
 
   scroll(el: HTMLElement) {
     el.scrollIntoView();
@@ -41,9 +45,14 @@ export class MovieDetailesComponent implements OnInit {
   navigateToActorDetailes(id: string) {
     this.router.navigate(['/actordetailes', id]);
   }
-  navigateToDetailes(id:string){
-    this.router.navigate(['/movie-detailes',id])
-       }
+  navigateToDetailes(id: string) {
+    this.router.navigate(['/movie-detailes', id]);
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+  }
+
+
 
   fetchTrailer() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -68,17 +77,44 @@ export class MovieDetailesComponent implements OnInit {
       );
     }
   }
-  fetchReview() {
+//   fetchReview() {
+//     const id = this.route.snapshot.paramMap.get('id');
+//     if (id !== null) {
+//       this.movieservice.MovieReviews(id).subscribe((res) => {
+//         this.reviews = res.results;
+// console.log(this.reviews)
+//         console.log("review",this.reviews.split('\n').slice(0, 3).join('\n'));
+//       });
+//     }
+//   }
+//   this.test=res.results[review].content.split
+newcontent: string[] = [];
+
+fetchReview() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id !== null) {
-      this.movieservice.MovieReviews(id).subscribe((res) => {
-        this.reviews = res.results;
-        console.log("review",this.reviews);
-      });
+        this.movieservice.MovieReviews(id).subscribe((res) => {
+            this.reviews = res.results;
+            console.log(this.reviews)
+        });
     }
-  }
+}
+toggleShowMore(id: number) {
+  this.showMore[id] = !this.showMore[id];
+}
 
+  // fetchReview() {
+  //   const id = this.route.snapshot.paramMap.get('id');
+  //   if (id !== null) {
+  //     this.movieservice.MovieReviews(id).subscribe((res) => {
+  //       this.reviews = res.results;
 
+  //       for (const review in this.reviews) {
+  //         console.log(review.content);
+  //       }
+  //     });
+  //   }
+  // }
 
   getCast() {
     const id = this.route.snapshot.paramMap.get('id');

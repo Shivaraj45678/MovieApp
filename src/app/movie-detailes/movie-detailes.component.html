@@ -144,8 +144,13 @@
           </table>
         </div>
       </div>
+      <div *ngFor="let review of reviews" style="color: bisque;">
+        <strong><p>{{review.author_details.username}}</p><p>{{review.updated_at}}</p></strong>
+        <p style="color: bisque;">{{ review.content | slice:0:100 }}<span *ngIf="review.content.length > 100">...</span><span *ngIf="showMore[review.id]">{{ review.content | slice:100 }}</span><a (click)="toggleShowMore(review.id)">{{ showMore[review.id] ? 'Read less' : 'Read more' }}</a></p>
+      </div>
+
       <!-- <div class="more" #target1> -->
-        <h2 class="heading">More Detailes</h2>
+        <!-- <h2 class="heading">More Detailes</h2>
         <div *ngFor="let review of reviews" class="container table-responsive py-5">
           <table class="table borderless">
 
@@ -162,16 +167,13 @@
               </tr>
               <tr>
                 <th scope="row">Actors</th>
-                <!-- <td>{{.Actors}}</td> -->
               </tr>
               <tr>
                 <th scope="row">Released</th>
-                <!-- <td>{{.Released}}</td> -->
 
               </tr>
               <tr>
                 <th scope="row">Awards</th>
-                <!-- <td>{{.Awards}}</td> -->
 
               </tr>
               <tr>
@@ -198,8 +200,7 @@
 
             </tbody>
           </table>
-        <!-- </div> -->
-      </div>
+      </div> -->
       <!-- <div>
   {{imdbid.Year}}
 </div> -->
