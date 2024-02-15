@@ -658,3 +658,49 @@ iframe{
 
 
 
+/* review */
+.example-card {
+  background-color: rgb(26,30,37);
+  margin-bottom: 10px;
+  border-radius: 4%;
+  border: 2px solid rgb(35, 40, 49);
+}
+
+.mat-card-header {
+  border-top-left-radius: 4%;
+  border-top-right-radius: 4%;
+}
+
+.mat-card-content {
+  border-bottom-left-radius: 4%;
+  border-bottom-right-radius: 4%;
+}
+
+.card-title-group {
+  display: flex;
+  align-items: center;
+}
+
+mat-card-title{
+  flex-grow: 1;
+  margin-right: 10px;
+  /* font-weight: bold; */
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+.card-rating {
+  /* border: 1px solid white; */
+  /* border-radius: 25%; */
+  /* padding: 5px; */
+  color: white;
+  /* background-color: floralwhite; */
+}
+
+.card-subtitle {
+  color: #6c757d;
+}
+mat-card-content{
+  color: rgb(126 134 149);
+
+}

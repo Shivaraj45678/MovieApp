@@ -1,6 +1,6 @@
 <div class="main">
   <div class="page container">
-    <div class="hi">
+    < class="hi">
       <!-- <app-navbar></app-navbar> -->
       <div class="bg-image" *ngIf="image">
         <header
@@ -144,73 +144,30 @@
           </table>
         </div>
       </div>
-      <div *ngFor="let review of reviews" style="color: bisque;">
-        <strong><p>{{review.author_details.username}}</p><p>{{review.updated_at}}</p></strong>
-        <p style="color: bisque;">{{ review.content | slice:0:100 }}<span *ngIf="review.content.length > 100">...</span><span *ngIf="showMore[review.id]">{{ review.content | slice:100 }}</span><a (click)="toggleShowMore(review.id)">{{ showMore[review.id] ? 'Read less' : 'Read more' }}</a></p>
-      </div>
-
-      <!-- <div class="more" #target1> -->
-        <!-- <h2 class="heading">More Detailes</h2>
-        <div *ngFor="let review of reviews" class="container table-responsive py-5">
-          <table class="table borderless">
-
-            <tbody>
-              <tr>
-                <th scope="row">Director</th>
-                <td>{{review.author}}</td>
-
-              </tr>
-              <tr>
-                <th scope="row">Writer</th>
-                <td>{{review.content}}</td>
-
-              </tr>
-              <tr>
-                <th scope="row">Actors</th>
-              </tr>
-              <tr>
-                <th scope="row">Released</th>
-
-              </tr>
-              <tr>
-                <th scope="row">Awards</th>
-
-              </tr>
-              <tr>
-                <th scope="row">Genre</th>
-                <td>{{imdbid.Genre}}</td>
-
-              </tr>
-              <tr>
-                <th scope="row">Country</th>
-                <td>{{imdbid.Country}}</td>
-              </tr>
-              <tr>
-                <th scope="row">BoxOffice</th>
-                <td>{{imdbid.BoxOffice}}</td>
-              </tr>
-              <tr>
-                <th scope="row">imdbRating</th>
-                <td>{{imdbid.imdbRating}} / 10</td>
-              </tr>
-              <tr>
-                <th scope="row">OTT</th>
-                <td>{{imdbid.DVD}}</td>
-              </tr>
-
-            </tbody>
-          </table>
-      </div> -->
-      <!-- <div>
-  {{imdbid.Year}}
-</div> -->
 
 
-      <!-- <app-defaultmovieslayout></app-defaultmovieslayout> -->
 
-    </div>
+
+
+      <h2 class="heading">Reviews</h2>
+
+  <mat-card class="example-card" *ngFor="let review of reviews" >
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{review.author_details.username}} </mat-card-title>
+        <mat-card-subtitle ><strong class="card-subtitle">Written by {{review.author_details.username}} on  {{review.updated_at | date:'yyyy-MM-dd'}}</strong></mat-card-subtitle>
+        <img style="border-radius: 50%;" mat-card-sm-image  [src]="review.author_details.avatar_path ? 'https://image.tmdb.org/t/p/original/' + review.author_details.avatar_path : 'https://static.vecteezy.com/system/resources/thumbnails/012/793/822/small/sr-initial-letter-gold-calligraphic-feminine-floral-hand-drawn-heraldic-monogram-antique-vintage-style-luxury-logo-design-premium-vector.jpg'" >
+
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <p >{{ review.content | slice:0:100 }}<span *ngIf="review.content.length > 100"><i class="bi bi-three-dots"></i></span><span  *ngIf="showMore[review.id]">{{ review.content | slice:100 }}</span><a (click)="toggleShowMore(review.id)" style="cursor: pointer;">{{ showMore[review.id] ? '.........Read less' : 'Read more' }}</a></p>
+      <small class="card-rating ">{{review.author_details.rating}}<i  class="bi bi-star-fill"></i></small>
+
+    </mat-card-content>
+  </mat-card>
     <app-footer></app-footer>
 
   </div>
 
-</div>
+

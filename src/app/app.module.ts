@@ -25,7 +25,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { NavbarComponent } from './reusable_components/navbar/navbar.component';
 import { FooterComponent } from './reusable_components/footer/footer.component';
 import { DefaultmovieslayoutComponent } from './reusable_components/defaultmovieslayout/defaultmovieslayout.component';
-import { ToastsComponent } from './reusable_components/toasts/toasts.component'
+import { ToastsComponent } from './reusable_components/toasts/toasts.component';
+import {MatCardModule} from '@angular/material/card';
 // import { YouTubePlayer } from '@angular/youtube-player';
 // import { LoadingSpinnerModule } from 'ngx-loading-spinner';
 
@@ -58,6 +59,7 @@ import { ToastsComponent } from './reusable_components/toasts/toasts.component'
     MatGridListModule,
     MatProgressSpinnerModule,
     MatIconModule,
+    MatCardModule
   ],
   providers: [
 
