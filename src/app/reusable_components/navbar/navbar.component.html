@@ -58,7 +58,7 @@
         style="cursor: pointer;"></a>
         <div>
           <p>
-            <span class="movieTitle">{{ movie.title | slice:0:25 }}</span><br>
+            <span class="movieTitle">{{ movie.title | slice:0:10 }}</span><span *ngIf="movie.title.length > 10">...</span><br>
             <span class="year" >{{ movie.release_date | date:'yyyy' }}</span>
           </p>
 
