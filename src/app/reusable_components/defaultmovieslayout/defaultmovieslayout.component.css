@@ -6,12 +6,15 @@
   color: white;
   text-align: center;
 }
-.card{
-  background-color: rgb(34, 31, 31);
-  height: 250px;
+.card {
+  background-color: rgb(15, 15, 15);
+  height: 300px;
+  margin-bottom: 10px;
+border: none;
 }
-.card-img-top{
+.card-img-top {
   height: 250px;
+  background-color: #0f0f0f;
 }
 
 body {
@@ -77,14 +80,27 @@ body {
     gap: 10px;
 
   }
-  .card{
-    height: 150px;
-  }
-  .card-img-top{
-    height: 150px;
-  }
 
+.card{
+  height: 200px;
 }
+.card-img-top{
+  height: 150px;
+}
+.year{
+  color: green;
+    border: 1px solid rgb(58 50 5);
+    background-color: rgb(58 50 50);
+    padding: 0px 2px;
+    border-radius: 5px;
+    font-size: smaller;
+}
+.movieTitle{
+  color: white;
+  font-size: smaller;
+
+
+}}
 .card:hover{
   transform: scale(.95);
   transition: all 1s ease;
@@ -125,3 +141,13 @@ strong{
   color: white;
 }
 
+.year{
+  color: green;
+    border: 1px solid rgb(58 50 5);
+    background-color: rgb(58 50 50);
+    padding: 0px 2px;
+    border-radius: 5px;
+}
+.movieTitle{
+  color: white;
+}
