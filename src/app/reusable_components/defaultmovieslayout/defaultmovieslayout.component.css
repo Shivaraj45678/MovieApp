@@ -97,7 +97,7 @@ body {
 }
 .movieTitle{
   color: white;
-  font-size: smaller;
+  font-size: xx-small;
 
 
 }}
@@ -150,4 +150,12 @@ strong{
 }
 .movieTitle{
   color: white;
+}
+.new{
+  justify-content: space-between;
+}
+.new a{
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 }

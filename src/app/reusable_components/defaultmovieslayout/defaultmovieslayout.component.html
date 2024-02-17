@@ -3,18 +3,21 @@
   <div *ngFor="let movie of topmovies" class=" card">
       <a ><img (click)=" navigateToDetailes(movie.id)"  class="card-img-top"  [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'path_to_default_image'" alt="Card image cap" style="cursor: pointer;" ></a>
       <p>
-        <span class="movieTitle">{{ movie.title | slice:0:10 }}</span><span *ngIf="movie.title.length > 10">...</span><br>
+        <span class="movieTitle">{{ movie.title | slice:0:18 }}</span><span style="color: white;" *ngIf="movie.title.length > 18">...</span><br>
         <span class="year" >{{ movie.release_date | date:'yyyy' }}</span>
       </p>
   </div>
 </div>
+<div class="d-flex new">
 <strong>Now Playing Movies</strong>
+<a routerLink="/new">..... More</a>
+</div>
 <div class="grid-item mt-4" >
   <div *ngFor="let movie of nowplyingmovies" class=" card">
       <a ><img (click)=" navigateToDetailes(movie.id)" class="card-img-top"  [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'path_to_default_image'" alt="Card image cap" style="cursor: pointer;" ></a>
       <div>
         <p>
-          <span class="movieTitle">{{ movie.title | slice:0:10 }}</span><span *ngIf="movie.title.length > 10">...</span><br>
+          <span class="movieTitle">{{ movie.title | slice:0:18 }}</span><span style="color: white;" *ngIf="movie.title.length > 18">...</span><br>
           <span class="year" >{{ movie.release_date | date:'yyyy' }}</span>
         </p>
 
@@ -29,7 +32,7 @@
     <a ><img (click)=" navigateToDetailes(movie.id)" class="card-img-top"  [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/original/' + movie.poster_path : 'path_to_default_image'" alt="Card image cap" style="cursor: pointer;" ></a>
         <div>
           <p>
-            <span class="movieTitle">{{ movie.title | slice:0:10 }}</span><span *ngIf="movie.title.length > 10">...</span><br>
+            <span class="movieTitle">{{ movie.title | slice:0:18 }}</span><span style="color: white;" *ngIf="movie.title.length > 18">...</span><br>
           </p>
 
 
