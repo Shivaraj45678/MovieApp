@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieserviceService } from '../services/movieservice.service';
 import { Movie } from '../model';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router,NavigationEnd } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
@@ -28,6 +28,7 @@ review: any;
 reviews: any[] = []; // Define reviews array to store fetched reviews
   showMore: { [key: number]: boolean } = {};
   sanitizedVideoUrldefault: SafeResourceUrl='';
+  loading: any;
 
   scroll(el: HTMLElement) {
     el.scrollIntoView();
@@ -150,32 +151,40 @@ toggleShowMore(id: number) {
 
   //   }
   ngOnInit(): void {
-    // this.fetchImages();
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
+    this.loading = true; // Set loading to true initially
+
     const id = this.route.snapshot.paramMap.get('id');
     if (id !== null) {
       this.movieservice.getMovieByID(id).subscribe((data: any) => {
         this.movieDetailes = data;
+
+        // Fetch additional data after getting movie details
         this.movieservice.getmovieByImdb(this.movieDetailes.imdb_id).subscribe((data: any) => {
             this.imdbid = data;
             console.log('testing', this.imdbid);
           });
 
-              this.movieservice.MovieImages(this.movieDetailes.imdb_id).subscribe((data) => {
-                this.image = data;
-                console.log(this.image);
-              });
+        this.movieservice.MovieImages(this.movieDetailes.imdb_id).subscribe((data) => {
+          this.image = data;
+          console.log(this.image);
+        });
 
+        this.fetchTrailer();
+        this.fetchReview();
+        this.getCast();
+        this.getmoviesbySimilar(id);
+
+        // Set loading to false when all data is fetched
+        this.loading = false;
       });
-      this.fetchTrailer();
-      this.fetchReview();
-      this.getCast();
-      this.getmoviesbySimilar(id);
-      // this.navigateToDetailes(id);
-
-
     }
+}
 
-  }
 
   getmoviesbySimilar(id:string){
 this.movieservice.getMoviesBySimilar(id).subscribe((data)=>{

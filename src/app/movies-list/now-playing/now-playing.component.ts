@@ -24,14 +24,14 @@ export class NowPlayingComponent {
   constructor(private service: SortedMoviesListService, private route: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router) {}
 
   fetchNowPlayingMovies(page: number) {
-    this.loading = true; // Set loading flag to true before making the HTTP request
+    this.loading = true;
     this.service.getNowPlayingMovies(page).subscribe((data: any) => {
+
+        this.loading = false;
+
       this.dataSource.data = data.results;
 
-      // Add a timeout to hide the loading spinner after 2 seconds
-      setTimeout(() => {
-        this.loading = false; // Set loading flag to false after the timeout
-      }, 700);
+
 
       this.totalPages = data.total_pages;
     });

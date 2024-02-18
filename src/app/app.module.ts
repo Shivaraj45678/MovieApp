@@ -20,13 +20,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatGridList } from '@angular/material/grid-list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { LoadingComponent } from './loader/loading/loading.component';
+// import { LoadingComponent } from './loader/loading/loading.component';
 import {MatIconModule} from '@angular/material/icon';
 import { NavbarComponent } from './reusable_components/navbar/navbar.component';
 import { FooterComponent } from './reusable_components/footer/footer.component';
 import { DefaultmovieslayoutComponent } from './reusable_components/defaultmovieslayout/defaultmovieslayout.component';
 import { ToastsComponent } from './reusable_components/toasts/toasts.component';
 import {MatCardModule} from '@angular/material/card';
+import { LoaderComponent } from './reusable_components/loader/loader.component';
 // import { YouTubePlayer } from '@angular/youtube-player';
 // import { LoadingSpinnerModule } from 'ngx-loading-spinner';
 
@@ -41,11 +42,12 @@ import {MatCardModule} from '@angular/material/card';
     PopularMoviesComponent,
     TopRatedMoviesComponent,
     UpcomingMoviesComponent,
-    LoadingComponent,
+    // LoadingComponent,
     NavbarComponent,
     FooterComponent,
     DefaultmovieslayoutComponent,
     ToastsComponent,
+    LoaderComponent,
 
   ],
   imports: [
