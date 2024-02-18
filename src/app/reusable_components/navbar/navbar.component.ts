@@ -52,27 +52,27 @@ export class NavbarComponent {
 //   }
 
 hi() {
-  if (this.query.trim() !== '') {
+  if (this.query && this.query.trim() !== '') { // Added a check to ensure query is not null or undefined
     this.movieservice.SearchMovie(this.query).subscribe((data: any) => {
       console.log(data);
       // Filter out movies with null poster_path and null profile_path
       this.movies = data.results.filter((movie: { poster_path: null; profile_path: null; }) => movie.poster_path !== null && movie.profile_path !== null);
 
+      // Simplified the code by extracting messageElement retrieval
+      const messageElement = document.getElementById("message");
       if (this.movies.length === 0) {
-        const messageElement = document.getElementById("message");
-        if (messageElement !== null) {
-          messageElement.innerHTML = "No Movie Found !";
+        if (messageElement) {
+          messageElement.innerHTML = "No Movie Found !"; // Use innerHTML safely
         }
       } else {
-        // Clear the message when movies are found
-        const messageElement = document.getElementById("message");
-        if (messageElement !== null) {
-          messageElement.innerHTML = "";
+        if (messageElement) {
+          messageElement.innerHTML = ""; // Use innerHTML safely
         }
       }
     });
   }
 }
+
 
 
 

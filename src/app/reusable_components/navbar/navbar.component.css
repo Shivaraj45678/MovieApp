@@ -80,6 +80,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     transition: none; /* Disable transition for small screens */
   }
+
 }
 @media (max-width: 800px) {
   .carousel {
@@ -98,6 +99,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
+
 }
 @media (max-width: 650px) {
   .grid-item {
@@ -124,6 +126,7 @@ body {
     font-size: xx-small;
 
   }
+
 }
 .card:hover {
   transform: scale(0.95);
@@ -206,4 +209,98 @@ body {
 }
 .movieTitle{
   color: white;
+}
+
+
+
+
+body {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/41294/hero.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+.search {
+  width: auto;
+  height: 40px;
+  /* margin: 150px auto; */
+  background: #444;
+  background: rgba(0,0,0,.2);
+  border-radius:  3px;
+  border: 1px solid #1a1e25;
+
+  input {
+    width: 60%;
+    padding: 10px 5px;
+    float: left;
+    color: #ccc;
+    border: 0;
+    background: transparent;
+    border-radius: 3px 0 0 3px;
+    &:focus {
+      outline: 0;
+      background:transparent;
+    }
+
+  }
+
+  button {
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 120px;
+    color: #fff;
+    background: transparent;
+    border-left: 1px solid #1a1e25;
+    border-radius: 0 3px 3px 0;
+
+    &:active {
+      box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+    }
+    &:focus {
+      outline: 0;
+    }
+
+  }
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  /* background-color: #333; */
+  color: white;
+}
+
+/* .logo img {
+  width: 50px;
+  height: auto;
+  margin-right: 20px;
+} */
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  display: inline-block;
+  margin-right: 30px; /* Adjust spacing between menu items */
+  font-size: clamp(12px, 4vw ,20px);
+}
+
+.menu ul li:last-child {
+  margin-right: 0; /* Remove margin from last menu item */
+}
+
+.menu ul li a {
+  color:#868c96;
+  text-decoration: none;
+}
+
+.navbar h1{
+  color:#868c96 ;
 }
