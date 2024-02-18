@@ -288,8 +288,8 @@ body {
 
 .menu ul li {
   display: inline-block;
-  margin-right: 30px; /* Adjust spacing between menu items */
-  font-size: clamp(12px, 4vw ,20px);
+  margin-right: 28px; /* Adjust spacing between menu items */
+  font-size: clamp(10px, 4vw ,20px);
 }
 
 .menu ul li:last-child {
