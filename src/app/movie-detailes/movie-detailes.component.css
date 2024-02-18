@@ -1,5 +1,5 @@
 .page{
-  background-color: rgb(26,30,37);
+  background-color: #0f0f0f;
 }
 
 *{
@@ -26,6 +26,7 @@ header{
   height:550px;
   position:relative;
   padding-top:80px;
+
 }
 
 
@@ -239,7 +240,7 @@ footer{
   align-items:center;
 }
 .videos,.more,.related,.cast{
-  background:rgb(26,30,37);
+  background:#0f0f0f;
   color:#fff;
   padding:10px 15px;
   /* display: grid; */
@@ -247,7 +248,7 @@ footer{
   align-items:center;
 }
 .table>:not(caption)>*>* {
-  background:rgb(26,30,37);
+  background:#0f0f0f;
   color:#fff;
 font-size: smaller;
 }
@@ -500,7 +501,7 @@ footer{
     width: 305px !important;
   }
   .modal-content{
-    background-color: #f0eaea !important;
+    background-color: #0f0f0f !important;
     width: fit-content !important;
   }
   .actor-card {
@@ -580,7 +581,7 @@ footer{
     width: 2.5cm !important;
   }
   .heading{
-    font-size: small !important;
+    font-size: x-small !important;
   }
 }
 
@@ -617,7 +618,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-background-color: rgb(26,30,37);
+background-color: #0f0f0f;
 }
 
 .actor-card img {
@@ -639,7 +640,7 @@ iframe{
  align-items: center;
 }
 .modal-content{
-  background-color: rgb(26,30,37) !important;
+  background-color: #0f0f0f !important;
   /* width: fit-content !important; */
 }
 
@@ -660,7 +661,7 @@ iframe{
 
 /* review */
 .example-card {
-  background-color: rgb(26,30,37);
+  background-color: #0f0f0f;
   margin-bottom: 10px;
   border-radius: 4%;
   border: 2px solid rgb(35, 40, 49);
