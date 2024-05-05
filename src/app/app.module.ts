@@ -9,13 +9,12 @@ import {CommonModule} from '@angular/common';
 // import { MovieDetailesComponent } from './movie-detailes/movie-detailes.component';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailesComponent } from './movie-detailes/movie-detailes.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActordetailesComponent } from './actordetailes/actordetailes.component';
 import { NowPlayingComponent } from './movies-list/now-playing/now-playing.component';
 import { PopularMoviesComponent } from './movies-list/popular-movies/popular-movies.component';
 import { TopRatedMoviesComponent } from './movies-list/top-rated-movies/top-rated-movies.component';
 import { UpcomingMoviesComponent } from './movies-list/upcoming-movies/upcoming-movies.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatGridList } from '@angular/material/grid-list';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -28,6 +27,13 @@ import { DefaultmovieslayoutComponent } from './reusable_components/defaultmovie
 import { ToastsComponent } from './reusable_components/toasts/toasts.component';
 import {MatCardModule} from '@angular/material/card';
 import { LoaderComponent } from './reusable_components/loader/loader.component';
+import { MoviesComponent } from './list/movies/movies.component';
+import { WebSeriesComponent } from './list/web-series/web-series.component';
+import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 // import { YouTubePlayer } from '@angular/youtube-player';
 // import { LoadingSpinnerModule } from 'ngx-loading-spinner';
 
@@ -48,6 +54,8 @@ import { LoaderComponent } from './reusable_components/loader/loader.component';
     DefaultmovieslayoutComponent,
     ToastsComponent,
     LoaderComponent,
+    MoviesComponent,
+    WebSeriesComponent,
 
   ],
   imports: [
@@ -61,7 +69,11 @@ import { LoaderComponent } from './reusable_components/loader/loader.component';
     MatGridListModule,
     MatProgressSpinnerModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatExpansionModule
   ],
   providers: [
 
